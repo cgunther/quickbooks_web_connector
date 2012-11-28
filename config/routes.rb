@@ -1,5 +1,5 @@
 QuickbooksWebConnector::Engine.routes.draw do
 
-  get 'qwc' => 'qwc#download', default: { format: :xml }
+  get 'qwc' => 'qwc#download', defaults: { format: :xml }
 
 end
