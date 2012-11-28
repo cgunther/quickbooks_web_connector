@@ -1,0 +1,3 @@
+module QuickbooksWebConnector
+  VERSION = "0.0.1"
+end
