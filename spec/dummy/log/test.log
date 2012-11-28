@@ -3,3 +3,1043 @@ Connecting to database specified by database.yml
   [1m[35m (0.0ms)[0m  rollback transaction
 Connecting to database specified by database.yml
 Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as HTML
+Completed 500 Internal Server Error in 35ms
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/download.xml.builder (17.2ms)
+Completed 200 OK in 28ms (Views: 28.0ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/download.xml.builder (6.7ms)
+Completed 200 OK in 18ms (Views: 17.9ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/download.xml.builder (6.5ms)
+Completed 200 OK in 17ms (Views: 17.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/download.xml.builder (6.4ms)
+Completed 200 OK in 17ms (Views: 17.0ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/download.xml.builder (6.4ms)
+Completed 200 OK in 18ms (Views: 17.6ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/download.xml.builder (6.5ms)
+Completed 200 OK in 17ms (Views: 17.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/download.xml.builder (6.4ms)
+Completed 200 OK in 17ms (Views: 17.0ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/download.xml.builder (6.4ms)
+Completed 200 OK in 17ms (Views: 17.0ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/download.xml.builder (6.4ms)
+Completed 200 OK in 17ms (Views: 17.0ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered text template (0.0ms)
+Sent data  (19.0ms)
+Completed 200 OK in 19ms (Views: 18.9ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data  (0.3ms)
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data  (0.3ms)
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered text template (0.0ms)
+Sent data  (10.5ms)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data  (0.3ms)
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data  (0.3ms)
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered text template (0.0ms)
+Sent data  (10.5ms)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data  (0.3ms)
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data  (0.3ms)
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data  (0.3ms)
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.1ms)
+Completed 500 Internal Server Error in 0ms
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.1ms)
+Completed 500 Internal Server Error in 0ms
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.1ms)
+Completed 500 Internal Server Error in 0ms
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.1ms)
+Completed 500 Internal Server Error in 0ms
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (10.4ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/download.xml.builder (6.4ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.8ms)
+Completed 200 OK in 19ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Completed 500 Internal Server Error in 14ms
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Completed 500 Internal Server Error in 0ms
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Completed 500 Internal Server Error in 0ms
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Completed 500 Internal Server Error in 0ms
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as 
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.5ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.9ms)
+Completed 200 OK in 22ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as 
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as 
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as 
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.4ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.8ms)
+Completed 200 OK in 19ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.4ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.8ms)
+Completed 200 OK in 19ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.4ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.8ms)
+Completed 200 OK in 19ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.4ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.8ms)
+Completed 200 OK in 19ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.4ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.9ms)
+Completed 200 OK in 19ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.4ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.8ms)
+Completed 200 OK in 19ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (10.4ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.4ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.8ms)
+Completed 200 OK in 19ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.4ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.8ms)
+Completed 200 OK in 19ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.4ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.8ms)
+Completed 200 OK in 19ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.4ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (2.2ms)
+Completed 200 OK in 19ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.4ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.8ms)
+Completed 200 OK in 19ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.4ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.8ms)
+Completed 200 OK in 19ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.3ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.8ms)
+Completed 200 OK in 19ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.4ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.8ms)
+Completed 200 OK in 19ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.3ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.8ms)
+Completed 200 OK in 19ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.3ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.8ms)
+Completed 200 OK in 19ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.4ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.8ms)
+Completed 200 OK in 19ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.3ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (2.2ms)
+Completed 200 OK in 19ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.3ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.8ms)
+Completed 200 OK in 19ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.5ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (2.0ms)
+Completed 200 OK in 19ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.5ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (2.1ms)
+Completed 200 OK in 20ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.5ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.9ms)
+Completed 200 OK in 19ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.5ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (2.2ms)
+Completed 200 OK in 20ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.5ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.9ms)
+Completed 200 OK in 19ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.6ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (2.2ms)
+Completed 200 OK in 20ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.5ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.9ms)
+Completed 200 OK in 20ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.5ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.8ms)
+Completed 200 OK in 19ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.6ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.9ms)
+Completed 200 OK in 20ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.5ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.8ms)
+Completed 200 OK in 19ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.7ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (2.1ms)
+Completed 200 OK in 20ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.6ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.9ms)
+Completed 200 OK in 20ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.6ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.9ms)
+Completed 200 OK in 19ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.6ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (2.2ms)
+Completed 200 OK in 20ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.5ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (2.2ms)
+Completed 200 OK in 20ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.8ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.9ms)
+Completed 200 OK in 20ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.5ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.9ms)
+Completed 200 OK in 20ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.5ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.9ms)
+Completed 200 OK in 19ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.6ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.9ms)
+Completed 200 OK in 20ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.6ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.9ms)
+Completed 200 OK in 20ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.6ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.9ms)
+Completed 200 OK in 20ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.5ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.9ms)
+Completed 200 OK in 19ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.6ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.9ms)
+Completed 200 OK in 19ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.5ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.9ms)
+Completed 200 OK in 19ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.5ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.9ms)
+Completed 200 OK in 19ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.8ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (2.1ms)
+Completed 200 OK in 20ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.5ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.9ms)
+Completed 200 OK in 19ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.6ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.9ms)
+Completed 200 OK in 19ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Processing by QuickbooksWebConnector::QwcController#download as XML
+  Rendered /Users/chrisgunther/Code/quickbooks_web_connector/app/views/quickbooks_web_connector/qwc/qwc.xml.builder (6.6ms)
+  Rendered text template (0.0ms)
+Sent data qbwc.qwc (1.9ms)
+Completed 200 OK in 19ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+Processing by QuickbooksWebConnector::QwcController#download as XML
+Sent data qbwc.qwc (0.3ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
