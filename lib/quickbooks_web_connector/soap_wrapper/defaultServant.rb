@@ -13,7 +13,7 @@ module QuickbooksWebConnector
       #
       def serverVersion(parameters)
         # TODO: Return a real version
-        ServerVersionResponse.new('1.2.3')
+        ServerVersionResponse.new(QuickbooksWebConnector.config.server_version)
       end
 
       # SYNOPSIS

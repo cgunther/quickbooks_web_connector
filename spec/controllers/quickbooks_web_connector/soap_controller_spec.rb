@@ -27,6 +27,8 @@ describe QuickbooksWebConnector::SoapController do
       # </env:Envelope>
 
       before do
+        QuickbooksWebConnector.configure { |c| c.server_version = '1.2.3' }
+
         request.env['CONTENT_TYPE'] = 'text/xml; charset=utf-8'
         request.env['RAW_POST_DATA'] = request_xml
         post :endpoint, { use_route: 'quickbooks_web_connector' }
