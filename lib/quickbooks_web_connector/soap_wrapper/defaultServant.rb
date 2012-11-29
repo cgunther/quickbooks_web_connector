@@ -12,7 +12,6 @@ module QuickbooksWebConnector
       #   parameters      ServerVersionResponse - {http://developer.intuit.com/}serverVersionResponse
       #
       def serverVersion(parameters)
-        # TODO: Return a real version
         ServerVersionResponse.new(QuickbooksWebConnector.config.server_version)
       end
 
