@@ -11,7 +11,7 @@ describe 'QuickbooksWebConnector routing' do
   end
 
   it 'routes the SOAP endpoint' do
-    expect(get: '/soap').to route_to(controller: 'quickbooks_web_connector/soap', action: 'endpoint')
+    expect(post: '/soap').to route_to(controller: 'quickbooks_web_connector/soap', action: 'endpoint')
   end
 
 end
