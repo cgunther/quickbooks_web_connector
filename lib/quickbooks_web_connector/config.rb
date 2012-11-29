@@ -18,10 +18,12 @@ module QuickbooksWebConnector
     include ActiveSupport::Configurable
 
     config_accessor :server_version
+    config_accessor :minimum_web_connector_client_version
   end
 
   configure do |config|
     config.server_version = '1.0.0'
+    config.minimum_web_connector_client_version = nil
   end
 
 end
