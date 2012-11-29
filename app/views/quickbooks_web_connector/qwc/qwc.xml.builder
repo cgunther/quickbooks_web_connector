@@ -2,7 +2,7 @@ xml.instruct!
 xml.QBWCXML do
   xml.AppName 'My QBWC App'
   xml.AppID
-  xml.AppURL '/path/to/endpoint'
+  xml.AppURL quickbooks_web_connector.soap_url
   xml.AppDescription 'My QBWC App Description'
   xml.AppSupport main_app.root_url
   xml.UserName 'foo'

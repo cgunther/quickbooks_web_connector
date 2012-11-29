@@ -20,7 +20,7 @@ describe 'quickbooks_web_connector/qwc/qwc' do
   end
 
   it 'includes the endpoint url' do
-    expect(root.text('AppURL')).to eq('/path/to/endpoint')
+    expect(root.text('AppURL')).to eq('http://test.host/quickbooks_web_connector/soap')
   end
 
   it 'includes the description' do
