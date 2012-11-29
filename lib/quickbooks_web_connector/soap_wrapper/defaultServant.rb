@@ -25,8 +25,7 @@ module QuickbooksWebConnector
       #   parameters      ClientVersionResponse - {http://developer.intuit.com/}clientVersionResponse
       #
       def clientVersion(parameters)
-        p [parameters]
-        raise NotImplementedError.new
+        ClientVersionResponse.new(nil)
       end
 
       # SYNOPSIS

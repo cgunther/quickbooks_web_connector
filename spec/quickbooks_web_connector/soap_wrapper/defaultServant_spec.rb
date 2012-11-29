@@ -13,4 +13,12 @@ describe QuickbooksWebConnector::SoapWrapper::QBWebConnectorSvcSoap do
 
     after { QuickbooksWebConnector.configure { |c| c.server_version = '1.0.0' } }
   end
+
+  describe 'clientVersion' do
+    subject(:response) { servant.clientVersion(stub :parameters, strVersion: '2.1.0.30') }
+
+    it { should be_a QuickbooksWebConnector::SoapWrapper::ClientVersionResponse }
+    its(:clientVersionResult) { should be_nil }
+  end
+
 end
