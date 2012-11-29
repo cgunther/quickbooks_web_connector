@@ -25,7 +25,13 @@ module QuickbooksWebConnector
       #   parameters      ClientVersionResponse - {http://developer.intuit.com/}clientVersionResponse
       #
       def clientVersion(parameters)
-        ClientVersionResponse.new(nil)
+        clientVersionResult = nil
+
+        if QuickbooksWebConnector.config.minimum_web_connector_client_version && QuickbooksWebConnector.config.minimum_web_connector_client_version.to_s > parameters.strVersion
+          clientVersionResult = "E:This version of QuickBooks Web Connector is outdated. Version #{QuickbooksWebConnector.config.minimum_web_connector_client_version} or greater is required."
+        end
+
+        ClientVersionResponse.new(clientVersionResult)
       end
 
       # SYNOPSIS
