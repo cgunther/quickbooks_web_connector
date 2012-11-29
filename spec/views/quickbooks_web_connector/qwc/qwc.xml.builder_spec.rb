@@ -36,11 +36,11 @@ describe 'quickbooks_web_connector/qwc/qwc' do
   end
 
   it 'includes the owner id' do
-    expect(root.text('OwnerID')).to eq('d69682e6-4436-44bc-bd19-d6bfbd11778d')
+    expect(root.text('OwnerID')).to eq('{d69682e6-4436-44bc-bd19-d6bfbd11778d}')
   end
 
   it 'includes the file id' do
-    expect(root.text('FileID')).to eq('916222f3-c574-4c70-8c9d-e3cec2634e49')
+    expect(root.text('FileID')).to eq('{916222f3-c574-4c70-8c9d-e3cec2634e49}')
   end
 
   it 'sets the type to QBFS' do
