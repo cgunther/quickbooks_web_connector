@@ -28,7 +28,7 @@ describe 'quickbooks_web_connector/qwc/qwc' do
   end
 
   it 'includes the support url' do
-    expect(root.text('AppSupport')).to eq('/path/to/support')
+    expect(root.text('AppSupport')).to eq('http://test.host/')
   end
 
   it 'includes the username' do
