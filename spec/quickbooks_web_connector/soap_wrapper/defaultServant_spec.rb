@@ -49,25 +49,53 @@ describe QuickbooksWebConnector::SoapWrapper::QBWebConnectorSvcSoap do
   describe 'authenticate' do
     subject(:response) { servant.authenticate(stub :parameters, strUserName: 'foo', strPassword: 'bar') }
 
-    before { SecureRandom.stub uuid: '71f1f9d9-8012-487c-af33-c84bab4d4ded' }
+    context 'unauthorized' do
 
-    it { should be_a QuickbooksWebConnector::SoapWrapper::AuthenticateResponse }
+      it { should be_a QuickbooksWebConnector::SoapWrapper::AuthenticateResponse }
 
-    it 'is a token for future requests' do
-      expect(response.authenticateResult[0]).to eq('71f1f9d9-8012-487c-af33-c84bab4d4ded')
+      it 'returns "nvu" with an invalid user' do
+        expect(response.authenticateResult[1]).to eq('nvu')
+      end
     end
 
-    it 'is nil for the valid user, has work, company file field' do
-      expect(response.authenticateResult[1]).to be_nil
+    context 'authorized' do
+      before do
+        QuickbooksWebConnector.configure do |c|
+          c.username = 'foo'
+          c.password = 'bar'
+        end
+      end
+
+      after do
+        QuickbooksWebConnector.configure do |c|
+          c.username = 'web_connector'
+          c.password = 'secret'
+        end
+      end
+
+      context 'has work to do' do
+        before { SecureRandom.stub uuid: '71f1f9d9-8012-487c-af33-c84bab4d4ded' }
+
+        it { should be_a QuickbooksWebConnector::SoapWrapper::AuthenticateResponse }
+
+        it 'is a token for future requests' do
+          expect(response.authenticateResult[0]).to eq('71f1f9d9-8012-487c-af33-c84bab4d4ded')
+        end
+
+        it 'is empty for the valid user, has work, company file field' do
+          expect(response.authenticateResult[1]).to eq('')
+        end
+
+        it 'is nil for delay' do
+          expect(response.authenticateResult[2]).to be_nil
+        end
+
+        it 'is nil for the new MinimumRunEveryNSeconds' do
+          expect(response.authenticateResult[3]).to be_nil
+        end
+      end
     end
 
-    it 'is nil for delay' do
-      expect(response.authenticateResult[2]).to be_nil
-    end
-
-    it 'is nil for the new MinimumRunEveryNSeconds' do
-      expect(response.authenticateResult[3]).to be_nil
-    end
   end
 
 end

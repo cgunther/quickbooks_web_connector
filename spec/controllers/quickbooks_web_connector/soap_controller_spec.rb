@@ -114,9 +114,8 @@ describe QuickbooksWebConnector::SoapController do
       #   <env:Body>
       #     <n1:authenticateResponse xmlns:n1="http://developer.intuit.com/">
       #       <n1:authenticateResult xsi:type="n1:ArrayOfString">
-      #         <n1:string xsi:type="xsd:string">c733224a-d85a-4011-8e22-d2c9dea9c0a6</n1:string>
-      #         <n1:string xsi:nil="true"
-      #             xsi:type="xsd:nil"></n1:string>
+      #         <n1:string xsi:type="xsd:string">c3a72320-ccce-4eb6-918d-ebb92d8f2b42</n1:string>
+      #         <n1:string xsi:type="xsd:string"></n1:string>
       #         <n1:string xsi:nil="true"
       #             xsi:type="xsd:nil"></n1:string>
       #         <n1:string xsi:nil="true"
@@ -126,7 +125,21 @@ describe QuickbooksWebConnector::SoapController do
       #   </env:Body>
       # </env:Envelope>
 
-      before { do_post }
+      before do
+        QuickbooksWebConnector.configure do |c|
+          c.username = 'foo'
+          c.password = 'bar'
+        end
+
+        do_post
+      end
+
+      after do
+        QuickbooksWebConnector.configure do |c|
+          c.username = 'web_connector'
+          c.password = 'secret'
+        end
+      end
 
       it 'responds with success' do
         expect(response).to be_success
