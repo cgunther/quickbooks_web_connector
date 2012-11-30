@@ -65,4 +65,19 @@ describe QuickbooksWebConnector::Configuration do
     end
   end
 
+  context 'company_file_path' do
+
+    context 'by default' do
+      its(:company_file_path) { should eq '' }
+    end
+
+    context 'configured via a config block' do
+      before { QuickbooksWebConnector.configure { |c| c.company_file_path = '/path/to/company.qbw' } }
+
+      its(:company_file_path) { should eq '/path/to/company.qbw' }
+
+      after { QuickbooksWebConnector.configure { |c| c.company_file_path = '' } }
+    end
+  end
+
 end

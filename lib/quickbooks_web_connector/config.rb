@@ -21,6 +21,7 @@ module QuickbooksWebConnector
     config_accessor :minimum_web_connector_client_version
     config_accessor :username
     config_accessor :password
+    config_accessor :company_file_path
   end
 
   configure do |config|
@@ -28,6 +29,7 @@ module QuickbooksWebConnector
     config.minimum_web_connector_client_version = nil
     config.username = 'web_connector'
     config.password = 'secret'
+    config.company_file_path = ''
   end
 
 end
