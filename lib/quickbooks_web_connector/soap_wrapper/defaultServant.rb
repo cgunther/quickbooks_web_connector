@@ -46,7 +46,7 @@ module QuickbooksWebConnector
       def authenticate(parameters)
         token = SecureRandom.uuid
         result = if parameters.strUserName == QuickbooksWebConnector.config.username && parameters.strPassword == QuickbooksWebConnector.config.password
-          ''
+          'none'
         else
           'nvu'
         end

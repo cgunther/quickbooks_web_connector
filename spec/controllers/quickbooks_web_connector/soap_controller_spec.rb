@@ -114,8 +114,8 @@ describe QuickbooksWebConnector::SoapController do
       #   <env:Body>
       #     <n1:authenticateResponse xmlns:n1="http://developer.intuit.com/">
       #       <n1:authenticateResult xsi:type="n1:ArrayOfString">
-      #         <n1:string xsi:type="xsd:string">c3a72320-ccce-4eb6-918d-ebb92d8f2b42</n1:string>
-      #         <n1:string xsi:type="xsd:string"></n1:string>
+      #         <n1:string xsi:type="xsd:string">5c7e2e0d-8912-4f13-ad60-cac3a3e68bf5</n1:string>
+      #         <n1:string xsi:type="xsd:string">none</n1:string>
       #         <n1:string xsi:nil="true"
       #             xsi:type="xsd:nil"></n1:string>
       #         <n1:string xsi:nil="true"
@@ -149,8 +149,8 @@ describe QuickbooksWebConnector::SoapController do
         expect(result.text('env:Body/n1:authenticateResponse/n1:authenticateResult/n1:string[1]')).to_not be_nil
       end
 
-      it 'returns nil for the auth result, has work, company file' do
-        expect(result.text('env:Body/n1:authenticateResponse/n1:authenticateResult/n1:string[2]')).to be_nil
+      it 'returns "none" for having no data to send' do
+        expect(result.text('env:Body/n1:authenticateResponse/n1:authenticateResult/n1:string[2]')).to eq('none')
       end
     end
 

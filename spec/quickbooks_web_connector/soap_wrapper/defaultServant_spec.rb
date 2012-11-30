@@ -73,6 +73,12 @@ describe QuickbooksWebConnector::SoapWrapper::QBWebConnectorSvcSoap do
         end
       end
 
+      context 'has no data to send' do
+        it 'is "none" for having no data' do
+          expect(response.authenticateResult[1]).to eq('none')
+        end
+      end
+
       context 'has work to do' do
         before { SecureRandom.stub uuid: '71f1f9d9-8012-487c-af33-c84bab4d4ded' }
 
@@ -83,7 +89,7 @@ describe QuickbooksWebConnector::SoapWrapper::QBWebConnectorSvcSoap do
         end
 
         it 'is empty for the valid user, has work, company file field' do
-          expect(response.authenticateResult[1]).to eq('')
+          expect(response.authenticateResult[1]).to eq('none')
         end
 
         it 'is nil for delay' do
