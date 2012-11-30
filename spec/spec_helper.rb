@@ -42,3 +42,7 @@ RSpec.configure do |config|
     system("rm -f #{$dir}/support/redis/dump.rdb")
   end
 end
+
+# fixture classes
+class SomeHandler
+end

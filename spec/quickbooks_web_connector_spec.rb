@@ -22,4 +22,18 @@ describe QuickbooksWebConnector do
     described_class.redis = new_namespace
     expect(described_class.redis).to eq(new_namespace)
   end
+
+  it 'can enqueue jobs' do
+    expect(described_class.size).to eq(0)
+    described_class.enqueue '<some><xml></xml></some>', SomeHandler, 1, '/tmp'
+
+    job = described_class.reserve
+
+    expect(job).to be_a_kind_of(described_class::Job)
+    expect(job.payload_class).to eq(SomeHandler)
+    expect(job.args[0]).to eq 1
+    expect(job.args[1]).to eq '/tmp'
+
+    expect(described_class.reserve).to be_nil
+  end
 end

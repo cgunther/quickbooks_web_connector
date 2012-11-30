@@ -3,6 +3,8 @@ require 'securerandom'
 require 'soap/rpc/standaloneServer'
 
 require 'quickbooks_web_connector/config'
+require 'quickbooks_web_connector/job'
+require 'quickbooks_web_connector/json_coder'
 
 require 'quickbooks_web_connector/soap_wrapper/default'
 require 'quickbooks_web_connector/soap_wrapper/defaultMappingRegistry'
@@ -49,6 +51,72 @@ module QuickbooksWebConnector
     return @redis if @redis
     self.redis = Redis.respond_to?(:connect) ? Redis.connect(:thread_safe => true) : "localhost:6379"
     self.redis
+  end
+
+  # Encapsulation of encode/decode. Overwrite this to use it across QuickbooksWebConnector.
+  # This defaults to JSON for backwards compatibilty.
+  def coder
+    @coder ||= JsonCoder.new
+  end
+  attr_writer :coder
+
+  #
+  # job shortcuts
+  #
+
+  # This method can be used to conveniently add a job to the queue.
+  # It assumes the class you're passing it is a real Ruby class (not
+  # a string or reference).
+  def enqueue(xml, klass, *args)
+    Job.create(xml, klass, *args)
+  end
+
+  # This method will return a `QuickbooksWebConnector::Job` object or
+  # a non-true value depending on whether a job can be obtained.
+  def reserve
+    Job.reserve
+  end
+
+  #
+  # queue manipulation
+  #
+
+  # Pushes a job onto the queue. The item should be any JSON-able Ruby object.
+
+  # The `item` is expected to be a hash with the following keys:
+  #
+  #     xml - The XML to send to Quickbooks as a String.
+  #   class - The String name of the response handler.
+  #    args - An Array of arguments to pass the handler. Usually passed
+  #           via `class.to_class.perform(*args)`.
+  #
+  # Example
+  #
+  #   QuickbooksWebConnector.push('xml' => '<some><xml></xml></some>', class' => 'CustomerAddResponseHandler', 'args' => [ 35 ])
+  #
+  # Returns nothing
+  def push(item)
+    redis.rpush :queue, encode(item)
+  end
+
+  # Pops a job off the queue.
+  #
+  # Returns a Ruby object.
+  def pop
+    decode @redis.lpop(:queue)
+  end
+
+  # Returns an integer representing the size of the queue.
+  def size
+    redis.llen :queue
+  end
+
+  def encode(object)
+    coder.encode object
+  end
+
+  def decode(object)
+    coder.decode object
   end
 
 end
