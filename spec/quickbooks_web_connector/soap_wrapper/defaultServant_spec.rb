@@ -80,7 +80,15 @@ describe QuickbooksWebConnector::SoapWrapper::QBWebConnectorSvcSoap do
       end
 
       context 'has work to do' do
-        before { SecureRandom.stub uuid: '71f1f9d9-8012-487c-af33-c84bab4d4ded' }
+        before do
+          QuickbooksWebConnector.enqueue '<some><xml></xml></some>', SomeHandler
+
+          QuickbooksWebConnector.configure { |c| c.company_file_path = '/path/to/company.qbw' }
+
+          SecureRandom.stub uuid: '71f1f9d9-8012-487c-af33-c84bab4d4ded'
+        end
+
+        after { QuickbooksWebConnector.configure { |c| c.company_file_path = '' } }
 
         it { should be_a QuickbooksWebConnector::SoapWrapper::AuthenticateResponse }
 
@@ -88,8 +96,8 @@ describe QuickbooksWebConnector::SoapWrapper::QBWebConnectorSvcSoap do
           expect(response.authenticateResult[0]).to eq('71f1f9d9-8012-487c-af33-c84bab4d4ded')
         end
 
-        it 'is empty for the valid user, has work, company file field' do
-          expect(response.authenticateResult[1]).to eq('none')
+        it 'returns the path to the company file' do
+          expect(response.authenticateResult[1]).to eq('/path/to/company.qbw')
         end
 
         it 'is nil for delay' do
@@ -101,7 +109,6 @@ describe QuickbooksWebConnector::SoapWrapper::QBWebConnectorSvcSoap do
         end
       end
     end
-
   end
 
 end
