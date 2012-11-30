@@ -2,7 +2,8 @@ module QuickbooksWebConnector
   class SoapController < ApplicationController
 
     def endpoint
-      render xml: SoapWrapper.route(request)
+      response = SoapWrapper.route(request)
+      render xml: response, content_type: 'text/xml'
     end
 
   end

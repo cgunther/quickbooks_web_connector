@@ -44,7 +44,7 @@ describe QuickbooksWebConnector::SoapController do
       end
 
       it 'responds as XML' do
-        expect(response.header['Content-Type']).to match(/application\/xml/)
+        expect(response.header['Content-Type']).to match(/text\/xml/)
       end
 
       it 'returns the version' do
