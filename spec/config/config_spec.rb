@@ -35,4 +35,19 @@ describe QuickbooksWebConnector::Configuration do
 
   end
 
+  context 'username' do
+
+    context 'by default' do
+      its(:username) { should eq 'web_connector' }
+    end
+
+    context 'configured via a config block' do
+      before { QuickbooksWebConnector.configure { |c| c.username = 'jsmith' } }
+
+      its(:username) { should eq 'jsmith' }
+
+      after { QuickbooksWebConnector.configure { |c| c.username = 'web_connector' } }
+    end
+  end
+
 end
