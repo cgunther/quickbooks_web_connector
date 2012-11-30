@@ -50,4 +50,19 @@ describe QuickbooksWebConnector::Configuration do
     end
   end
 
+  context 'password' do
+
+    context 'by default' do
+      its(:password) { should eq 'secret' }
+    end
+
+    context 'configured via a config block' do
+      before { QuickbooksWebConnector.configure { |c| c.password = 'quickbooks' } }
+
+      its(:password) { should eq 'quickbooks' }
+
+      after { QuickbooksWebConnector.configure { |c| c.password = 'secret' } }
+    end
+  end
+
 end

@@ -20,12 +20,14 @@ module QuickbooksWebConnector
     config_accessor :server_version
     config_accessor :minimum_web_connector_client_version
     config_accessor :username
+    config_accessor :password
   end
 
   configure do |config|
     config.server_version = '1.0.0'
     config.minimum_web_connector_client_version = nil
     config.username = 'web_connector'
+    config.password = 'secret'
   end
 
 end
