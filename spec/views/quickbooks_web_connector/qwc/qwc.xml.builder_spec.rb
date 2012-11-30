@@ -3,7 +3,13 @@ require 'rexml/document'
 
 describe 'quickbooks_web_connector/qwc/qwc' do
 
-  before { render }
+  before do
+    QuickbooksWebConnector.configure { |c| c.username = 'jsmith' }
+
+    render
+  end
+
+  after { QuickbooksWebConnector.configure { |c| c.username = 'web_connector' } }
 
   let(:root) { REXML::Document.new(rendered).root }
 
@@ -32,7 +38,7 @@ describe 'quickbooks_web_connector/qwc/qwc' do
   end
 
   it 'includes the username' do
-    expect(root.text('UserName')).to eq('foo')
+    expect(root.text('UserName')).to eq('jsmith')
   end
 
   it 'includes the owner id' do
