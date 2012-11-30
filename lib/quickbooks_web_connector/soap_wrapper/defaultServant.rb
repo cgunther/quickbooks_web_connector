@@ -44,8 +44,8 @@ module QuickbooksWebConnector
       #   parameters      AuthenticateResponse - {http://developer.intuit.com/}authenticateResponse
       #
       def authenticate(parameters)
-        p [parameters]
-        raise NotImplementedError.new
+        token = SecureRandom.uuid
+        AuthenticateResponse.new([token, nil, nil, nil])
       end
 
       # SYNOPSIS

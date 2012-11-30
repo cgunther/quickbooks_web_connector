@@ -4,6 +4,10 @@ describe QuickbooksWebConnector::SoapController do
 
   describe 'POST :endpoint' do
 
+    def do_post
+      post :endpoint, use_route: 'quickbooks_web_connector'
+    end
+
     before do
       request.env['CONTENT_TYPE'] = 'text/xml; charset=utf-8'
       request.env['RAW_POST_DATA'] = request_xml
@@ -84,6 +88,56 @@ describe QuickbooksWebConnector::SoapController do
 
       it 'returns the version' do
         expect(result.text('env:Body/n1:clientVersionResponse')).to be_nil
+      end
+    end
+
+    context 'authenticate' do
+      let(:request_xml) do
+        <<-EOT
+          <?xml version="1.0" encoding="utf-8"?>
+          <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <soap:Body>
+              <authenticate xmlns="http://developer.intuit.com/">
+                <strUserName>foo</strUserName>
+                <strPassword>bar</strPassword>
+              </authenticate>
+            </soap:Body>
+          </soap:Envelope>
+        EOT
+      end
+
+      # Response
+      # <?xml version="1.0" encoding="utf-8" ?>
+      # <env:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      #     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      #     xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+      #   <env:Body>
+      #     <n1:authenticateResponse xmlns:n1="http://developer.intuit.com/">
+      #       <n1:authenticateResult xsi:type="n1:ArrayOfString">
+      #         <n1:string xsi:type="xsd:string">c733224a-d85a-4011-8e22-d2c9dea9c0a6</n1:string>
+      #         <n1:string xsi:nil="true"
+      #             xsi:type="xsd:nil"></n1:string>
+      #         <n1:string xsi:nil="true"
+      #             xsi:type="xsd:nil"></n1:string>
+      #         <n1:string xsi:nil="true"
+      #             xsi:type="xsd:nil"></n1:string>
+      #       </n1:authenticateResult>
+      #     </n1:authenticateResponse>
+      #   </env:Body>
+      # </env:Envelope>
+
+      before { do_post }
+
+      it 'responds with success' do
+        expect(response).to be_success
+      end
+
+      it 'returns a token' do
+        expect(result.text('env:Body/n1:authenticateResponse/n1:authenticateResult/n1:string[1]')).to_not be_nil
+      end
+
+      it 'returns nil for the auth result, has work, company file' do
+        expect(result.text('env:Body/n1:authenticateResponse/n1:authenticateResult/n1:string[2]')).to be_nil
       end
     end
 

@@ -1,3 +1,4 @@
+require 'securerandom'
 require 'soap/rpc/standaloneServer'
 
 require 'quickbooks_web_connector/config'
