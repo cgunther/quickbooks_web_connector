@@ -124,8 +124,7 @@ module QuickbooksWebConnector
       #   parameters      CloseConnectionResponse - {http://developer.intuit.com/}closeConnectionResponse
       #
       def closeConnection(parameters)
-        p [parameters]
-        raise NotImplementedError.new
+        CloseConnectionResponse.new
       end
     end
 

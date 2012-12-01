@@ -111,4 +111,10 @@ describe QuickbooksWebConnector::SoapWrapper::QBWebConnectorSvcSoap do
     end
   end
 
+  describe 'closeConnection' do
+    subject(:response) { servant.closeConnection(stub :parameters) }
+
+    it { should be_a QuickbooksWebConnector::SoapWrapper::CloseConnectionResponse }
+  end
+
 end

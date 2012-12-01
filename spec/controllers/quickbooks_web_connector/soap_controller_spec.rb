@@ -154,6 +154,42 @@ describe QuickbooksWebConnector::SoapController do
       end
     end
 
+    context 'closeConnection' do
+      # Request
+      let(:request_xml) do
+        <<-EOT
+          <?xml version="1.0" encoding="utf-8"?>
+          <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <soap:Body>
+              <closeConnection xmlns="http://developer.intuit.com/">
+                <ticket>934ea5d9-231e-4426-9ae9-720d1020c472</ticket>
+              </closeConnection>
+            </soap:Body>
+          </soap:Envelope>
+        EOT
+      end
+
+      # Response
+      # <?xml version="1.0" encoding="utf-8" ?>
+      # <env:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      #     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      #     xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+      #   <env:Body>
+      #     <n1:closeConnectionResponse xmlns:n1="http://developer.intuit.com/"></n1:closeConnectionResponse>
+      #   </env:Body>
+      # </env:Envelope>
+
+      before { do_post }
+
+      it 'responds with success' do
+        expect(response).to be_success
+      end
+
+      it 'returns the closeConnectionResponse' do
+        expect(result.elements['env:Body/n1:closeConnectionResponse']).to_not be_nil
+      end
+    end
+
   end
 
 end
