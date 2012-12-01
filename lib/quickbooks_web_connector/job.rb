@@ -1,6 +1,8 @@
 module QuickbooksWebConnector
   class Job
 
+    attr_accessor :response_xml
+
     def initialize(payload)
       @payload = payload
     end
@@ -26,6 +28,18 @@ module QuickbooksWebConnector
     def self.peek
       return unless payload = QuickbooksWebConnector.peek
       new(payload)
+    end
+
+    # Attempts to perform the work represented by this job instance.
+    # Calls #perform on the class given in the payload with the
+    # Quickbooks response and the arguments given in the payload..
+    def perform
+      job = payload_class
+      job_args = args || []
+      job_args.prepend response_xml
+
+      # Execute the job.
+      job.perform(*job_args)
     end
 
     # Returns the request XML from the payload.

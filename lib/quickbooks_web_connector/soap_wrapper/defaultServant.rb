@@ -84,8 +84,14 @@ module QuickbooksWebConnector
       #   parameters      ReceiveResponseXMLResponse - {http://developer.intuit.com/}receiveResponseXMLResponse
       #
       def receiveResponseXML(parameters)
-        p [parameters]
-        raise NotImplementedError.new
+        job = QuickbooksWebConnector::Job.reserve
+        job.response_xml = parameters.response
+        job.perform
+
+        # TODO: This just returns 1% by default. Need a way to determine the actual percentage done.
+        progress = QuickbooksWebConnector.size == 0 ? 100 : 1
+
+        ReceiveResponseXMLResponse.new(progress)
       end
 
       # SYNOPSIS

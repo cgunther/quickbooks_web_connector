@@ -45,4 +45,6 @@ end
 
 # fixture classes
 class SomeHandler
+  def self.perform(response_xml, *args)
+  end
 end

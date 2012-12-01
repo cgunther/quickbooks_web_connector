@@ -200,6 +200,71 @@ describe QuickbooksWebConnector::SoapController do
       end
     end
 
+    context 'receiveResponseXML' do
+      let(:request_xml) do
+        <<-EOT
+          <?xml version="1.0" encoding="utf-8"?>
+          <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <soap:Body>
+              <receiveResponseXML xmlns="http://developer.intuit.com/">
+                <ticket>3dde5f3d-dc68-4500-9391-69f75e824330</ticket>
+                <response>
+                  &lt;?xml version="1.0" ?&gt;
+                  &lt;QBXML&gt;
+                    &lt;QBXMLMsgsRs&gt;
+                      &lt;CustomerAddRs statusCode="0" statusSeverity="Info" statusMessage="Status OK"&gt;
+                        &lt;CustomerRet&gt;
+                          &lt;ListID&gt;80000006-1354334808&lt;/ListID&gt;
+                          &lt;TimeCreated&gt;2012-11-30T23:06:48-05:00&lt;/TimeCreated&gt;
+                          &lt;TimeModified&gt;2012-11-30T23:06:48-05:00&lt;/TimeModified&gt;
+                          &lt;EditSequence&gt;1354334808&lt;/EditSequence&gt;
+                          &lt;Name&gt;Test Inc&lt;/Name&gt;
+                          &lt;FullName&gt;Test Inc&lt;/FullName&gt;
+                          &lt;IsActive&gt;true&lt;/IsActive&gt;
+                          &lt;Sublevel&gt;0&lt;/Sublevel&gt;
+                          &lt;Balance&gt;0.00&lt;/Balance&gt;
+                          &lt;TotalBalance&gt;0.00&lt;/TotalBalance&gt;
+                          &lt;JobStatus&gt;None&lt;/JobStatus&gt;
+                        &lt;/CustomerRet&gt;
+                      &lt;/CustomerAddRs&gt;
+                    &lt;/QBXMLMsgsRs&gt;
+                  &lt;/QBXML&gt;
+                </response>
+                <hresult />
+                <message />
+              </receiveResponseXML>
+            </soap:Body>
+          </soap:Envelope>
+        EOT
+      end
+
+      # Response
+      # <?xml version="1.0" encoding="utf-8" ?>
+      # <env:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      #     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      #     xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+      #   <env:Body>
+      #     <n1:receiveResponseXMLResponse xmlns:n1="http://developer.intuit.com/">
+      #       <n1:receiveResponseXMLResult xsi:type="xsd:int">100</n1:receiveResponseXMLResult>
+      #     </n1:receiveResponseXMLResponse>
+      #   </env:Body>
+      # </env:Envelope>
+
+      before do
+        QuickbooksWebConnector.enqueue '<some><xml></xml></some>', SomeHandler, 1
+
+        do_post
+      end
+
+      it 'responds with success' do
+        expect(response).to be_success
+      end
+
+      it 'returns the percentage done' do
+        expect(result.text('env:Body/n1:receiveResponseXMLResponse/n1:receiveResponseXMLResult')).to eq('100')
+      end
+    end
+
     context 'closeConnection' do
       # Request
       let(:request_xml) do

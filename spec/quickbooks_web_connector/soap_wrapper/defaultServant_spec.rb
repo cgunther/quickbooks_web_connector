@@ -120,6 +120,27 @@ describe QuickbooksWebConnector::SoapWrapper::QBWebConnectorSvcSoap do
     its(:sendRequestXMLResult) { should eq '<some><xml></xml></some>' }
   end
 
+  describe 'receiveResponseXML' do
+    subject(:response) { servant.receiveResponseXML(stub :parameters, response: '<response><xml></xml></response>') }
+
+    before do
+      QuickbooksWebConnector.enqueue '<request><xml></xml></request>', SomeHandler, 1
+      SomeHandler.should_receive(:perform).with('<response><xml></xml></response>', 1)
+    end
+
+    context 'last job' do
+      it { should be_a QuickbooksWebConnector::SoapWrapper::ReceiveResponseXMLResponse }
+      its(:receiveResponseXMLResult) { should eq 100 }
+    end
+
+    context 'additional jobs' do
+      before { QuickbooksWebConnector.enqueue '<other><xml></xml></other>', SomeHandler, 2 }
+
+      it { should be_a QuickbooksWebConnector::SoapWrapper::ReceiveResponseXMLResponse }
+      its(:receiveResponseXMLResult) { should eq 1 }
+    end
+  end
+
   describe 'closeConnection' do
     subject(:response) { servant.closeConnection(stub :parameters) }
 
