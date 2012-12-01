@@ -10,8 +10,8 @@ module QuickbooksWebConnector
     # pass to the class' `perform` method.
     #
     # Raises an exception if no class is given.
-    def self.create(xml, klass, *args)
-      QuickbooksWebConnector.push('xml' => xml, 'class' => klass.to_s, 'args' => args)
+    def self.create(request_xml, klass, *args)
+      QuickbooksWebConnector.push('request_xml' => request_xml, 'class' => klass.to_s, 'args' => args)
     end
 
     # Returns an instance of QuickbooksWebConnector::Job
@@ -30,7 +30,7 @@ module QuickbooksWebConnector
 
     # Returns the request XML from the payload.
     def request_xml
-      @payload['xml']
+      @payload['request_xml']
     end
 
     # Returns the actual class constant represented in this job's payload.
