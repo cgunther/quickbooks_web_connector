@@ -21,6 +21,18 @@ module QuickbooksWebConnector
       new(payload)
     end
 
+    # Return an instance of QuickbooksWebConnector::job if any jobs are
+    # available, without removing the job from the queue
+    def self.peek
+      return unless payload = QuickbooksWebConnector.peek
+      new(payload)
+    end
+
+    # Returns the request XML from the payload.
+    def request_xml
+      @payload['xml']
+    end
+
     # Returns the actual class constant represented in this job's payload.
     def payload_class
       @payload_class ||= @payload['class'].constantize

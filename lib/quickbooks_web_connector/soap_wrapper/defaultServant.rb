@@ -68,8 +68,10 @@ module QuickbooksWebConnector
       #   parameters      SendRequestXMLResponse - {http://developer.intuit.com/}sendRequestXMLResponse
       #
       def sendRequestXML(parameters)
-        p [parameters]
-        raise NotImplementedError.new
+        job = QuickbooksWebConnector::Job.peek
+        request_xml = job ? job.request_xml : nil
+
+        SendRequestXMLResponse.new request_xml
       end
 
       # SYNOPSIS

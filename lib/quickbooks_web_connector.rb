@@ -111,6 +111,11 @@ module QuickbooksWebConnector
     redis.llen :queue
   end
 
+  # Returns the next item currently queued, without removing it.
+  def peek
+    decode redis.lindex :queue, 0
+  end
+
   def encode(object)
     coder.encode object
   end

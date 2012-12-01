@@ -36,4 +36,12 @@ describe QuickbooksWebConnector do
 
     expect(described_class.reserve).to be_nil
   end
+
+  it 'can peek at the queue' do
+    described_class.push('name' => 'chris')
+    expect(described_class.size).to eq(1)
+    expect(described_class.peek).to eq('name' => 'chris')
+    expect(described_class.size).to eq(1)
+  end
+
 end

@@ -154,6 +154,52 @@ describe QuickbooksWebConnector::SoapController do
       end
     end
 
+    context 'sendRequestXML' do
+      let(:request_xml) do
+        <<-EOT
+          <?xml version="1.0" encoding="utf-8"?>
+          <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <soap:Body>
+              <sendRequestXML xmlns="http://developer.intuit.com/">
+                <ticket>0358d44e-9d87-4d40-8299-3026881951bb</ticket>
+                <strHCPResponse></strHCPResponse>
+                <strCompanyFileName>C:\\Documents and Settings\\All Users\\Documents\\Intuit\\QuickBooks\\Company Files\\Sample.QBW</strCompanyFileName>
+                <qbXMLCountry>US</qbXMLCountry>
+                <qbXMLMajorVers>6</qbXMLMajorVers>
+                <qbXMLMinorVers>0</qbXMLMinorVers>
+              </sendRequestXML>
+            </soap:Body>
+          </soap:Envelope>
+        EOT
+      end
+
+      # Response
+      # <?xml version="1.0" encoding="utf-8" ?>
+      # <env:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      #     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      #     xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+      #   <env:Body>
+      #     <n1:sendRequestXMLResponse xmlns:n1="http://developer.intuit.com/">
+      #       <n1:sendRequestXMLResult xsi:type="xsd:string">&lt;some&gt;&lt;xml&gt;&lt;/xml&gt;&lt;/some&gt;</n1:sendRequestXMLResult>
+      #     </n1:sendRequestXMLResponse>
+      #   </env:Body>
+      # </env:Envelope>
+
+      before do
+        QuickbooksWebConnector.enqueue '<some><xml></xml></some>', SomeHandler, 1
+
+        do_post
+      end
+
+      it 'responds with success' do
+        expect(response).to be_success
+      end
+
+      it 'returns the request XML' do
+        expect(result.text('env:Body/n1:sendRequestXMLResponse/n1:sendRequestXMLResult')).to eq('<some><xml></xml></some>')
+      end
+    end
+
     context 'closeConnection' do
       # Request
       let(:request_xml) do
