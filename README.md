@@ -3,7 +3,7 @@ QuickbooksWebConnector
 
 QuickbooksWebConnector is a Redis-backed library for queueing up requests for the Quickbooks Web Connector software to fetch and perform. Responses from the Quickbooks Web Connector can also be handled if you need to take some action with the result.
 
-QuickbooksWebConnector is heavily inspired by [QBWC](https://github.com/skryl/qbwc) and [Resque](https://github.com/defunkt/resque).
+QuickbooksWebConnector is heavily inspired by [QBWC](https://github.com/skryl/qbwc) and [Resque](https://github.com/defunkt/resque), so many thanks to the great people behind those gems.
 
 Requirements
 ------------
