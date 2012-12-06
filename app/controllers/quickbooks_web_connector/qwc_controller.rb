@@ -1,5 +1,5 @@
 module QuickbooksWebConnector
-  class QwcController < ApplicationController
+  class QwcController < QuickbooksWebConnectorController
 
     def download
       send_data render_to_string(:qwc),

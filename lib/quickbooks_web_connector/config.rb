@@ -22,6 +22,8 @@ module QuickbooksWebConnector
     config_accessor :username
     config_accessor :password
     config_accessor :company_file_path
+
+    config_accessor :parent_controller
   end
 
   configure do |config|
@@ -30,6 +32,8 @@ module QuickbooksWebConnector
     config.username = 'web_connector'
     config.password = 'secret'
     config.company_file_path = ''
+
+    config.parent_controller = 'ApplicationController'
   end
 
 end

@@ -1,5 +1,5 @@
 module QuickbooksWebConnector
-  class SoapController < ApplicationController
+  class SoapController < QuickbooksWebConnectorController
 
     def endpoint
       response = SoapWrapper.route(request)

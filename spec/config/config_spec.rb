@@ -80,4 +80,20 @@ describe QuickbooksWebConnector::Configuration do
     end
   end
 
+  describe 'parent_controller' do
+
+    context 'by default' do
+      its(:parent_controller) { should eq 'ApplicationController' }
+    end
+
+    context 'configured via config block' do
+      before { QuickbooksWebConnector.configure { |c| c.parent_controller = 'MyController' } }
+
+      its(:parent_controller) { should eq 'MyController' }
+
+      after { QuickbooksWebConnector.configure { |c| c.parent_controller = 'ApplicationController' } }
+    end
+
+  end
+
 end
