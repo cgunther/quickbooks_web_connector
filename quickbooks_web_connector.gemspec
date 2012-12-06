@@ -9,12 +9,12 @@ Gem::Specification.new do |s|
   s.version     = QuickbooksWebConnector::VERSION
   s.authors     = ["Chris Gunther"]
   s.email       = ["chris@room118solutions.com"]
-  s.homepage    = "TODO"
+  s.homepage    = "https://github.com/cgunther/quickbooks_web_connector"
   s.summary     = "Rails engine for interfacing with Quickbooks Web Connector"
   s.description = "QuickbooksWebConnector is an engine for sending requests and recieving responses from the Quickbooks Web Connector"
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
-  s.test_files = Dir["test/**/*"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
+  s.test_files = Dir["spec/**/*"]
 
   s.add_dependency "rails", "~> 3.2.9"
   s.add_dependency "mumboe-soap4r", "~> 1.5.8"
