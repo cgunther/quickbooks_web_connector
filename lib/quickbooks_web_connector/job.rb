@@ -38,11 +38,15 @@ module QuickbooksWebConnector
     # Calls #perform on the class given in the payload with the
     # Quickbooks response and the arguments given in the payload..
     def perform
-      job = response_handler_class
-      job_args.prepend response_xml
+      begin
+        job = response_handler_class
+        job_args.prepend response_xml
 
-      # Execute the job.
-      job.perform(*job_args)
+        # Execute the job.
+        job.perform(*job_args)
+      rescue Object => ex
+        fail(ex)
+      end
     end
 
     # Returns the request XML from the payload.
