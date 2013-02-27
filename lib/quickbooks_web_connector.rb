@@ -3,6 +3,7 @@ require 'securerandom'
 require 'soap/rpc/standaloneServer'
 
 require 'quickbooks_web_connector/config'
+require 'quickbooks_web_connector/failure'
 require 'quickbooks_web_connector/job'
 require 'quickbooks_web_connector/json_coder'
 
@@ -114,6 +115,18 @@ module QuickbooksWebConnector
   # Returns the next item currently queued, without removing it.
   def peek
     decode redis.lindex :queue, 0
+  end
+
+  # Does the dirty work of fetching a range of items from a Redis list and
+  # converting them into Ruby objects
+  def list_range(key, start = 0, count = 1)
+    if count == 1
+      decode redis.lindex(key, start)
+    else
+      Array(redis.lrange(key, start, start+count-1)).map do |item|
+        decode item
+      end
+    end
   end
 
   def encode(object)
