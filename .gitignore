@@ -8,3 +8,4 @@ spec/dummy/.sass-cache
 spec/support/redis/dump.rdb
 .rbenv-version
 Gemfile.lock
+tmp
