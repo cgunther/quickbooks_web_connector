@@ -186,7 +186,8 @@ describe QuickbooksWebConnector::SoapController do
       # </env:Envelope>
 
       before do
-        QuickbooksWebConnector.enqueue '<some><xml></xml></some>', SomeHandler, 1
+        SomeBuilder.stub(:perform).with(1).and_return('<some><xml></xml></some>')
+        QuickbooksWebConnector.enqueue SomeBuilder, SomeHandler, 1
 
         do_post
       end

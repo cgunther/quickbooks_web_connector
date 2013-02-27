@@ -114,7 +114,10 @@ describe QuickbooksWebConnector::SoapWrapper::QBWebConnectorSvcSoap do
   describe 'sendRequestXML' do
     subject(:response) { servant.sendRequestXML(stub :parameters) }
 
-    before { QuickbooksWebConnector.enqueue '<some><xml></xml></some>', SomeHandler, 1 }
+    before do
+      SomeBuilder.stub(:perform).with(1).and_return('<some><xml></xml></some>')
+      QuickbooksWebConnector.enqueue SomeBuilder, SomeHandler, 1
+    end
 
     it { should be_a QuickbooksWebConnector::SoapWrapper::SendRequestXMLResponse }
     its(:sendRequestXMLResult) { should eq '<some><xml></xml></some>' }

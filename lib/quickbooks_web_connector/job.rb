@@ -7,13 +7,17 @@ module QuickbooksWebConnector
       @payload = payload
     end
 
-    # Creates a job by placing it on the queue. Expects XML as a string,
-    # a string class name, and an optional array of arguments to
+    # Creates a job by placing it on the queue. Expects a request builder class
+    # name, a response handler class name, and an optional array of arguments to
     # pass to the class' `perform` method.
     #
     # Raises an exception if no class is given.
-    def self.create(request_xml, klass, *args)
-      QuickbooksWebConnector.push('request_xml' => request_xml, 'class' => klass.to_s, 'args' => args)
+    def self.create(request_builder, response_handler, *args)
+      QuickbooksWebConnector.push(
+        'request_builder_class' => request_builder.to_s,
+        'response_handler_class' => response_handler.to_s,
+        'args' => args
+      )
     end
 
     # Returns an instance of QuickbooksWebConnector::Job
@@ -34,8 +38,7 @@ module QuickbooksWebConnector
     # Calls #perform on the class given in the payload with the
     # Quickbooks response and the arguments given in the payload..
     def perform
-      job = payload_class
-      job_args = args || []
+      job = response_handler_class
       job_args.prepend response_xml
 
       # Execute the job.
@@ -44,17 +47,26 @@ module QuickbooksWebConnector
 
     # Returns the request XML from the payload.
     def request_xml
-      @payload['request_xml']
+      request_builder_class.perform(*job_args)
+    end
+
+    # Returns the actual class constant for building the request from the job's payload.
+    def request_builder_class
+      @request_builder_class ||= @payload['request_builder_class'].constantize
     end
 
     # Returns the actual class constant represented in this job's payload.
-    def payload_class
-      @payload_class ||= @payload['class'].constantize
+    def response_handler_class
+      @response_handler_class ||= @payload['response_handler_class'].constantize
     end
 
     # Returns an array of args represented in this job's payload.
     def args
       @payload['args']
+    end
+
+    def job_args
+      args || []
     end
 
   end

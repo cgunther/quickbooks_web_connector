@@ -44,6 +44,11 @@ RSpec.configure do |config|
 end
 
 # fixture classes
+class SomeBuilder
+  def self.perform(*args)
+  end
+end
+
 class SomeHandler
   def self.perform(response_xml, *args)
   end

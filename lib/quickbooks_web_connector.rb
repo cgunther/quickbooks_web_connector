@@ -67,8 +67,8 @@ module QuickbooksWebConnector
   # This method can be used to conveniently add a job to the queue.
   # It assumes the class you're passing it is a real Ruby class (not
   # a string or reference).
-  def enqueue(xml, klass, *args)
-    Job.create(xml, klass, *args)
+  def enqueue(request_builder, response_handler, *args)
+    Job.create(request_builder, response_handler, *args)
   end
 
   # This method will return a `QuickbooksWebConnector::Job` object or
