@@ -9,3 +9,4 @@ spec/support/redis/dump.rdb
 .rbenv-version
 Gemfile.lock
 tmp
+.DS_Store
