@@ -119,13 +119,9 @@ module QuickbooksWebConnector
 
   # Does the dirty work of fetching a range of items from a Redis list and
   # converting them into Ruby objects
-  def list_range(key, start = 0, count = 1)
-    if count == 1
-      decode redis.lindex(key, start)
-    else
-      Array(redis.lrange(key, start, start+count-1)).map do |item|
-        decode item
-      end
+  def list_range(key, start = 0, stop = -1)
+    Array(redis.lrange(key, start, stop)).map do |item|
+      decode item
     end
   end
 

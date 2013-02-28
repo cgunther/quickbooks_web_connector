@@ -34,6 +34,19 @@ module QuickbooksWebConnector
       new(payload)
     end
 
+    # Find jobs from the queue.
+    #
+    # Returns the list of jobs queued.
+    #
+    # This method can be potentially very slow and memory intensive,
+    # depending on the size of your queue, as it loads all jobs into
+    # a Ruby array.
+    def self.queued
+      QuickbooksWebConnector.list_range(:queue, 0, -1).map do |item|
+        new(item)
+      end
+    end
+
     # Attempts to perform the work represented by this job instance.
     # Calls #perform on the class given in the payload with the
     # Quickbooks response and the arguments given in the payload..

@@ -20,8 +20,8 @@ module QuickbooksWebConnector
       QuickbooksWebConnector.redis.llen(:failed).to_i
     end
 
-    def self.all(start = 0, count = 1)
-      QuickbooksWebConnector.list_range(:failed, start, count)
+    def self.all(start = 0, stop = -1)
+      QuickbooksWebConnector.list_range(:failed, start, stop)
     end
 
     def initialize(exception, payload)

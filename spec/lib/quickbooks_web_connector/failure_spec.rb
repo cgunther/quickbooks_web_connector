@@ -20,7 +20,7 @@ describe QuickbooksWebConnector::Failure do
 
       expect(described_class.count).to eq(1)
 
-      item = described_class.all
+      item = described_class.all.first
       expect(item['failed_at']).to_not be_nil
       expect(item['payload']).to eq('foo' => 'bar')
       expect(item['exception']).to eq('Exception')
