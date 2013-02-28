@@ -46,11 +46,17 @@ module QuickbooksWebConnector
         payload: payload,
         exception: exception.class.to_s,
         error: exception.to_s,
-        backtrace: Array(exception.backtrace),
+        backtrace: filter_backtrace(Array(exception.backtrace)),
       }
       data = QuickbooksWebConnector.encode(data)
       QuickbooksWebConnector.redis.rpush(:failed, data)
     end
+
+    private
+
+      def filter_backtrace(backtrace)
+        backtrace.take_while { |item| !item.include?('/lib/quickbooks_web_connector/job.rb') }
+      end
 
   end
 end
