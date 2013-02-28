@@ -53,10 +53,9 @@ module QuickbooksWebConnector
     def perform
       begin
         job = response_handler_class
-        job_args.prepend response_xml
 
         # Execute the job.
-        job.perform(*job_args)
+        job.perform(response_xml, *job_args)
       rescue Object => ex
         fail(ex)
       end
@@ -88,7 +87,7 @@ module QuickbooksWebConnector
     end
 
     def job_args
-      args.dup || []
+      args || []
     end
 
     # Given an exception object, hands off the needed parameters to the Failure
