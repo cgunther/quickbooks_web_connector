@@ -24,6 +24,10 @@ module QuickbooksWebConnector
       QuickbooksWebConnector.list_range(:failed, start, stop)
     end
 
+    def self.find(index)
+      QuickbooksWebConnector.list_range(:failed, index, index).first
+    end
+
     def initialize(exception, payload)
       @exception = exception
       @payload = payload
