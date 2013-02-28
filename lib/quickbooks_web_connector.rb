@@ -104,7 +104,7 @@ module QuickbooksWebConnector
   #
   # Returns a Ruby object.
   def pop
-    decode @redis.lpop(:queue)
+    decode redis.lpop(:queue)
   end
 
   # Returns an integer representing the size of the queue.
