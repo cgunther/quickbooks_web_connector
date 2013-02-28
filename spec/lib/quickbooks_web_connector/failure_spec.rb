@@ -12,6 +12,22 @@ describe QuickbooksWebConnector::Failure do
     end
   end
 
+  describe '.requeue' do
+    it 'adds the failure back in as a new job' do
+      described_class.create(exception: Exception.new('boom'), payload: { 'request_builder_class' => 'SomeBuilder', 'response_handler_class' => 'SomeHandler', 'args' => ['36'] })
+
+      described_class.requeue(0)
+
+      expect(described_class.find(0)['retried_at']).to_not be_nil
+
+      expect(QuickbooksWebConnector.size).to eq(1)
+      new_job = QuickbooksWebConnector.reserve
+      expect(new_job.request_builder_class).to be(SomeBuilder)
+      expect(new_job.response_handler_class).to be(SomeHandler)
+      expect(new_job.args).to eq(['36'])
+    end
+  end
+
   describe '#save' do
     subject(:failure) { described_class.new(Exception.new('something went wrong'), { foo: 'bar' }) }
 

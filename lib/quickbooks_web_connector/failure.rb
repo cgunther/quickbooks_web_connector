@@ -28,6 +28,13 @@ module QuickbooksWebConnector
       QuickbooksWebConnector.list_range(:failed, index, index).first
     end
 
+    def self.requeue(index)
+      item = find(index)
+      item['retried_at'] = Time.now.rfc2822
+      QuickbooksWebConnector.redis.lset(:failed, index, QuickbooksWebConnector.encode(item))
+      Job.create(item['payload']['request_builder_class'], item['payload']['response_handler_class'], *item['payload']['args'])
+    end
+
     def initialize(exception, payload)
       @exception = exception
       @payload = payload
