@@ -28,6 +28,18 @@ describe QuickbooksWebConnector::Failure do
     end
   end
 
+  describe '.remove' do
+    it 'removes the failed job from the list' do
+      described_class.create(exception: Exception.new, payload: {})
+
+      expect(described_class.all).to have(1).job
+
+      described_class.remove(0)
+
+      expect(described_class.all).to have(0).jobs
+    end
+  end
+
   describe '#save' do
     subject(:failure) { described_class.new(Exception.new('something went wrong'), { foo: 'bar' }) }
 

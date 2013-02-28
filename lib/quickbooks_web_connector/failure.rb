@@ -35,6 +35,12 @@ module QuickbooksWebConnector
       Job.create(item['payload']['request_builder_class'], item['payload']['response_handler_class'], *item['payload']['args'])
     end
 
+    def self.remove(index)
+      id = rand(0xffffff)
+      QuickbooksWebConnector.redis.lset(:failed, index, id)
+      QuickbooksWebConnector.redis.lrem(:failed, 1, id)
+    end
+
     def initialize(exception, payload)
       @exception = exception
       @payload = payload
