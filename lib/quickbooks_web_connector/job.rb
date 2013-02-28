@@ -88,7 +88,7 @@ module QuickbooksWebConnector
     end
 
     def job_args
-      args || []
+      args.dup || []
     end
 
     # Given an exception object, hands off the needed parameters to the Failure
