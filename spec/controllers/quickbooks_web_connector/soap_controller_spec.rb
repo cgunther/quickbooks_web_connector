@@ -2,6 +2,15 @@ require 'spec_helper'
 
 describe QuickbooksWebConnector::SoapController do
 
+  # QWC will perform a GET to check the certificate, so we gotta respond
+  describe 'GET :endpoint' do
+    it 'returns nothing successfully' do
+      get :endpoint, use_route: 'quickbooks_web_connector'
+
+      expect(subject.response).to be_success
+    end
+  end
+
   describe 'POST :endpoint' do
 
     def do_post
