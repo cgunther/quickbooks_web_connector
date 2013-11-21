@@ -10,3 +10,4 @@ spec/support/redis/dump.rdb
 Gemfile.lock
 tmp
 .DS_Store
+.ruby-version
