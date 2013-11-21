@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.required_ruby_version = Gem::Requirement.new(">= 1.9.3")
 
   s.add_dependency "rails", "~> 3.2.9"
-  s.add_dependency "mumboe-soap4r", "~> 1.5.8"
+  s.add_dependency "soap2r", "~> 1.5.8"
   s.add_dependency "redis-namespace", "~> 1.0"
 
   s.add_development_dependency "sqlite3"
