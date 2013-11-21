@@ -4,7 +4,7 @@ describe QuickbooksWebConnector::SoapWrapper::QBWebConnectorSvcSoap do
   let(:servant) { described_class.new }
 
   describe 'serverVersion' do
-    subject(:response) { servant.serverVersion(stub :parameters) }
+    subject(:response) { servant.serverVersion(double(:parameters)) }
 
     before { QuickbooksWebConnector.configure { |c| c.server_version = '1.2.3' } }
 
@@ -15,7 +15,7 @@ describe QuickbooksWebConnector::SoapWrapper::QBWebConnectorSvcSoap do
   end
 
   describe 'clientVersion' do
-    subject(:response) { servant.clientVersion(stub :parameters, strVersion: '2.1.0.30') }
+    subject(:response) { servant.clientVersion(double(:parameters, strVersion: '2.1.0.30')) }
 
     context 'no minimum version set' do
       before { QuickbooksWebConnector.configure { |c| c.minimum_web_connector_client_version = nil } }
@@ -47,7 +47,7 @@ describe QuickbooksWebConnector::SoapWrapper::QBWebConnectorSvcSoap do
   end
 
   describe 'authenticate' do
-    subject(:response) { servant.authenticate(stub :parameters, strUserName: 'foo', strPassword: 'bar') }
+    subject(:response) { servant.authenticate(double(:parameters, strUserName: 'foo', strPassword: 'bar')) }
 
     context 'unauthorized' do
 
@@ -112,7 +112,7 @@ describe QuickbooksWebConnector::SoapWrapper::QBWebConnectorSvcSoap do
   end
 
   describe 'sendRequestXML' do
-    subject(:response) { servant.sendRequestXML(stub :parameters) }
+    subject(:response) { servant.sendRequestXML(double(:parameters)) }
 
     before do
       SomeBuilder.stub(:perform).with(1).and_return('<some><xml></xml></some>')
@@ -124,7 +124,7 @@ describe QuickbooksWebConnector::SoapWrapper::QBWebConnectorSvcSoap do
   end
 
   describe 'receiveResponseXML' do
-    subject(:response) { servant.receiveResponseXML(stub :parameters, response: '<response><xml></xml></response>') }
+    subject(:response) { servant.receiveResponseXML(double(:parameters, response: '<response><xml></xml></response>')) }
 
     before do
       QuickbooksWebConnector.enqueue '<request><xml></xml></request>', SomeHandler, 1
@@ -145,7 +145,7 @@ describe QuickbooksWebConnector::SoapWrapper::QBWebConnectorSvcSoap do
   end
 
   describe 'closeConnection' do
-    subject(:response) { servant.closeConnection(stub :parameters) }
+    subject(:response) { servant.closeConnection(double(:parameters)) }
 
     it { should be_a QuickbooksWebConnector::SoapWrapper::CloseConnectionResponse }
   end
