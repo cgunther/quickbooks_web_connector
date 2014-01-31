@@ -1,9 +1,15 @@
 language: ruby
+
 rvm:
   - 1.9.3
   - 2.0.0
+
+gemfile:
+  - gemfiles/rails_32.gemfile
+
 notifications:
   hipchat:
     rooms:
       secure: "G+RnSzh4v9XYdNO/zxLq66q2uKRomBJlQtUKFbvvawEMCxpTWkxaVQxK01LIj8TaPzHp7Tege6MRihawkO2DPjK8ygf6tzw3GG+B5EHjfD31yMLPnLL53FEuULGbhGy7851kSwD5z/GsN1e6TbWqLFSJqp3W3FYyOLhxMJ1ZXeg="
-script: bundle exec rspec spec
+
+script: bundle exec rake spec
