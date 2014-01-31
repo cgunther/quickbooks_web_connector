@@ -8,6 +8,7 @@ spec/dummy/.sass-cache
 spec/support/redis/dump.rdb
 spec/support/redis/stdout
 .rbenv-version
+gemfiles/*.lock
 Gemfile.lock
 tmp
 .DS_Store
