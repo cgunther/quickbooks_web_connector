@@ -21,7 +21,7 @@ end
 task :default => 'spec:all'
 
 namespace :spec do
-  gemfiles = %w(rails_32)
+  gemfiles = %w(rails_32 rails_40)
 
   gemfiles.each do |gemfile|
     desc "Run tests against #{gemfile}"
