@@ -138,28 +138,35 @@ describe QuickbooksWebConnector::SoapController do
         QuickbooksWebConnector.configure do |c|
           c.username = 'foo'
           c.password = 'bar'
+          c.company_file_path = "C:\\path\\to\\company.qbw"
         end
-
-        do_post
       end
 
       after do
         QuickbooksWebConnector.configure do |c|
           c.username = 'web_connector'
           c.password = 'secret'
+          c.company_file_path = nil
         end
       end
 
-      it 'responds with success' do
+      it 'responds that theres no jobs to work when authenticated without jobs' do
+        do_post
+
         expect(response).to be_success
-      end
-
-      it 'returns a token' do
         expect(result.text('env:Body/n1:authenticateResponse/n1:authenticateResult/n1:string[1]')).to_not be_nil
+        expect(result.text('env:Body/n1:authenticateResponse/n1:authenticateResult/n1:string[2]')).to eq('none')
       end
 
-      it 'returns "none" for having no data to send' do
-        expect(result.text('env:Body/n1:authenticateResponse/n1:authenticateResult/n1:string[2]')).to eq('none')
+      it 'returns the company_file_path when theres data to send' do
+        SomeBuilder.stub(:perform).with(1).and_return('<some><xml></xml></some>')
+        QuickbooksWebConnector.enqueue SomeBuilder, SomeHandler, 1
+
+        do_post
+
+        expect(response).to be_success
+        expect(result.text('env:Body/n1:authenticateResponse/n1:authenticateResult/n1:string[1]')).to_not be_nil
+        expect(result.text('env:Body/n1:authenticateResponse/n1:authenticateResult/n1:string[2]')).to eq('C:\path\to\company.qbw')
       end
     end
 
