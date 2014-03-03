@@ -1,9 +1,9 @@
 xml.instruct!
 xml.QBWCXML do
-  xml.AppName 'My QBWC App'
+  xml.AppName QuickbooksWebConnector.config.app_name
   xml.AppID
   xml.AppURL quickbooks_web_connector.soap_url
-  xml.AppDescription 'My QBWC App Description'
+  xml.AppDescription QuickbooksWebConnector.config.app_description
   xml.AppSupport main_app.root_url
   xml.UserName QuickbooksWebConnector.config.username
   xml.OwnerID '{d69682e6-4436-44bc-bd19-d6bfbd11778d}'

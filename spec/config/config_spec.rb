@@ -96,4 +96,36 @@ describe QuickbooksWebConnector::Configuration do
 
   end
 
+  describe 'app_name' do
+
+    context 'by default' do
+      its(:app_name) { should eq 'My QBWC App' }
+    end
+
+    context 'configured via a config block' do
+      before { QuickbooksWebConnector.configure { |c| c.app_name = 'Sample App' } }
+
+      its(:app_name) { should eq 'Sample App' }
+
+      after { QuickbooksWebConnector.configure { |c| c.app_name = 'My QBWC App' } }
+    end
+
+  end
+
+  describe 'app_description' do
+
+    context 'by default' do
+      its(:app_description) { should eq 'My QBWC App Description' }
+    end
+
+    context 'configured via a config block' do
+      before { QuickbooksWebConnector.configure { |c| c.app_description = 'Sample Description' } }
+
+      its(:app_description) { should eq 'Sample Description' }
+
+      after { QuickbooksWebConnector.configure { |c| c.app_description = 'My QBWC App Description' } }
+    end
+
+  end
+
 end

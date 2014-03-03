@@ -4,7 +4,11 @@ require 'rexml/document'
 describe 'quickbooks_web_connector/qwc/qwc' do
 
   before do
-    QuickbooksWebConnector.configure { |c| c.username = 'jsmith' }
+    QuickbooksWebConnector.configure do |c|
+      c.username = 'jsmith'
+      c.app_name = 'My Connector'
+      c.app_description = 'Sample description for app'
+    end
 
     render
   end
@@ -18,7 +22,7 @@ describe 'quickbooks_web_connector/qwc/qwc' do
   end
 
   it 'includes the app name' do
-    expect(root.text('AppName')).to eq('My QBWC App')
+    expect(root.text('AppName')).to eq('My Connector')
   end
 
   it 'includes the app ID' do
@@ -30,7 +34,7 @@ describe 'quickbooks_web_connector/qwc/qwc' do
   end
 
   it 'includes the description' do
-    expect(root.text('AppDescription')).to eq('My QBWC App Description')
+    expect(root.text('AppDescription')).to eq('Sample description for app')
   end
 
   it 'includes the support url' do

@@ -24,6 +24,9 @@ module QuickbooksWebConnector
     config_accessor :company_file_path
 
     config_accessor :parent_controller
+
+    config_accessor :app_name
+    config_accessor :app_description
   end
 
   configure do |config|
@@ -34,6 +37,9 @@ module QuickbooksWebConnector
     config.company_file_path = ''
 
     config.parent_controller = 'ApplicationController'
+
+    config.app_name = 'My QBWC App'
+    config.app_description = 'My QBWC App Description'
   end
 
 end
