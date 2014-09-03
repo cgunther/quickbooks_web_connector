@@ -72,6 +72,11 @@ module QuickbooksWebConnector
     Job.create(request_builder, response_handler, *args)
   end
 
+  # This method can be used to conveniently remove a job from the queue.
+  def dequeue(request_builder, response_handler, *args)
+    Job.destroy(request_builder, response_handler, *args)
+  end
+
   # This method will return a `QuickbooksWebConnector::Job` object or
   # a non-true value depending on whether a job can be obtained.
   def reserve
@@ -115,6 +120,11 @@ module QuickbooksWebConnector
   # Returns the next item currently queued, without removing it.
   def peek
     decode redis.lindex :queue, 0
+  end
+
+  # Delete any matching items
+  def remove(item)
+    redis.lrem :queue, 0, encode(item)
   end
 
   # Does the dirty work of fetching a range of items from a Redis list and

@@ -38,6 +38,19 @@ describe QuickbooksWebConnector do
     expect(described_class.reserve).to be_nil
   end
 
+  it 'can dequeue jobs' do
+    expect(described_class.size).to eq(0)
+
+    described_class.enqueue SomeBuilder, SomeHandler, 1, '/tmp'
+    described_class.enqueue SomeBuilder, SomeHandler, 2, '/tmp'
+
+    expect(described_class.size).to eq(2)
+
+    described_class.dequeue SomeBuilder, SomeHandler, 1, '/tmp'
+
+    expect(described_class.size).to eq(1)
+  end
+
   it 'can peek at the queue' do
     described_class.push('name' => 'chris')
     expect(described_class.size).to eq(1)

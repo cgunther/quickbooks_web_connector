@@ -20,6 +20,17 @@ module QuickbooksWebConnector
       )
     end
 
+    # Destroys a job on the queue. Expects a request builder class name, a
+    # response handler class name, and an optional array of arguments to pass
+    # to the class' `perform` method.
+    def self.destroy(request_builder, response_handler, *args)
+      QuickbooksWebConnector.remove(
+        'request_builder_class' => request_builder.to_s,
+        'response_handler_class' => response_handler.to_s,
+        'args' => args
+      )
+    end
+
     # Returns an instance of QuickbooksWebConnector::Job
     # if any jobs are available. If not, returns nil.
     def self.reserve
