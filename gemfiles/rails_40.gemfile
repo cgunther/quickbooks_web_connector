@@ -1,8 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 4.0.0'
-gem 'redis-namespace', '~> 1.0'
-gem 'soap2r', '~> 1.5.8'
+gemspec path: '..'
 
-gem 'rspec-rails', '~> 2.14'
-gem 'sqlite3'
+gem 'rails', '~> 4.0.0'
