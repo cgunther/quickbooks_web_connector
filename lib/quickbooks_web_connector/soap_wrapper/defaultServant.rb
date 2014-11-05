@@ -47,6 +47,9 @@ module QuickbooksWebConnector
         token = SecureRandom.uuid
         result = if parameters.strUserName == QuickbooksWebConnector.config.username && parameters.strPassword == QuickbooksWebConnector.config.password
           if QuickbooksWebConnector.size > 0
+            # Store how many jobs are queued so we can track progress later
+            QuickbooksWebConnector.store_job_count_for_session
+
             QuickbooksWebConnector.config.company_file_path
           else
             'none'
@@ -88,8 +91,13 @@ module QuickbooksWebConnector
         job.response_xml = parameters.response
         job.perform
 
-        # TODO: This just returns 1% by default. Need a way to determine the actual percentage done.
-        progress = QuickbooksWebConnector.size == 0 ? 100 : 1
+        progress = if QuickbooksWebConnector.size == 0
+          # We're done
+          QuickbooksWebConnector.clear_job_count_for_session
+          100
+        else
+          QuickbooksWebConnector.session_progress
+        end
 
         ReceiveResponseXMLResponse.new(progress)
       end

@@ -107,6 +107,12 @@ describe QuickbooksWebConnector::SoapWrapper::QBWebConnectorSvcSoap do
         it 'is nil for the new MinimumRunEveryNSeconds' do
           expect(response.authenticateResult[3]).to be_nil
         end
+
+        it 'stores the number of jobs queued for the session for later calculating progress' do
+          response
+
+          expect(QuickbooksWebConnector.job_count_for_session).to eq(1)
+        end
       end
     end
   end
@@ -131,16 +137,17 @@ describe QuickbooksWebConnector::SoapWrapper::QBWebConnectorSvcSoap do
       SomeHandler.should_receive(:perform).with('<response><xml></xml></response>', 1)
     end
 
-    context 'last job' do
-      it { should be_a QuickbooksWebConnector::SoapWrapper::ReceiveResponseXMLResponse }
-      its(:receiveResponseXMLResult) { should eq 100 }
+    it 'returns 100 when no more jobs are left' do
+      expect(response).to be_a(QuickbooksWebConnector::SoapWrapper::ReceiveResponseXMLResponse)
+      expect(response.receiveResponseXMLResult).to eq(100)
     end
 
-    context 'additional jobs' do
-      before { QuickbooksWebConnector.enqueue '<other><xml></xml></other>', SomeHandler, 2 }
+    it 'returns the progress for the session when there are jobs left' do
+      QuickbooksWebConnector.enqueue '<other><xml></xml></other>', SomeHandler, 2
+      QuickbooksWebConnector.store_job_count_for_session
 
-      it { should be_a QuickbooksWebConnector::SoapWrapper::ReceiveResponseXMLResponse }
-      its(:receiveResponseXMLResult) { should eq 1 }
+      expect(response).to be_a(QuickbooksWebConnector::SoapWrapper::ReceiveResponseXMLResponse)
+      expect(response.receiveResponseXMLResult).to eq(50)
     end
   end
 

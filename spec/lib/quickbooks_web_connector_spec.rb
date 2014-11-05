@@ -58,4 +58,26 @@ describe QuickbooksWebConnector do
     expect(described_class.size).to eq(1)
   end
 
+  it 'can calculate the progress of the sync session' do
+    described_class.enqueue SomeBuilder, SomeHandler, 1, '/tmp'
+    described_class.enqueue SomeBuilder, SomeHandler, 2, '/tmp'
+    described_class.enqueue SomeBuilder, SomeHandler, 3, '/tmp'
+
+    described_class.store_job_count_for_session
+
+    expect(described_class.session_progress).to eq(0)
+
+    described_class.reserve
+
+    expect(described_class.session_progress).to eq(34)
+
+    described_class.reserve
+
+    expect(described_class.session_progress).to eq(67)
+
+    described_class.reserve
+
+    expect(described_class.session_progress).to eq(100)
+  end
+
 end

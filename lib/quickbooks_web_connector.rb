@@ -84,6 +84,33 @@ module QuickbooksWebConnector
   end
 
   #
+  # sync session
+  #
+
+  # Store how many jobs we're starting with so that during the sync, we can
+  # determine the progress we've made.
+  def store_job_count_for_session
+    redis.set :queue_size, QuickbooksWebConnector.size
+  end
+
+  # Fetch the saved number of jobs for the session
+  def job_count_for_session
+    redis.get(:queue_size).to_i
+  end
+
+  # Clear the temporarily stored count of jobs for the sync session.
+  def clear_job_count_for_session
+    redis.del :queue_size
+  end
+
+  # Figure out how many jobs are left based on the queue size when we started
+  # and how many of them are left
+  def session_progress
+    completed_jobs_count = job_count_for_session - QuickbooksWebConnector.size
+    (completed_jobs_count.fdiv(job_count_for_session) * 100).ceil
+  end
+
+  #
   # queue manipulation
   #
 
