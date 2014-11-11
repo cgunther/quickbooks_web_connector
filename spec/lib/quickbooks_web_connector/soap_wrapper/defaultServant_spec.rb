@@ -7,12 +7,10 @@ describe QuickbooksWebConnector::SoapWrapper::QBWebConnectorSvcSoap do
     subject(:response) { servant.serverVersion(double(:parameters)) }
 
     it 'returns returns the configured server_version' do
-      QuickbooksWebConnector.configure { |c| c.server_version = '1.2.3' }
-
-      expect(response).to be_a(QuickbooksWebConnector::SoapWrapper::ServerVersionResponse)
-      expect(response.serverVersionResult).to eq('1.2.3')
-
-      QuickbooksWebConnector.configure { |c| c.server_version = '1.0.0' }
+      swap QuickbooksWebConnector.config, server_version: '1.2.3' do
+        expect(response).to be_a(QuickbooksWebConnector::SoapWrapper::ServerVersionResponse)
+        expect(response.serverVersionResult).to eq('1.2.3')
+      end
     end
   end
 
@@ -20,30 +18,24 @@ describe QuickbooksWebConnector::SoapWrapper::QBWebConnectorSvcSoap do
     subject(:response) { servant.clientVersion(double(:parameters, strVersion: '2.1.0.30')) }
 
     it 'returns nil when no minimum version has been configured' do
-      QuickbooksWebConnector.configure { |c| c.minimum_web_connector_client_version = nil }
-
-      expect(response).to be_a(QuickbooksWebConnector::SoapWrapper::ClientVersionResponse)
-      expect(response.clientVersionResult).to be_nil
-
-      QuickbooksWebConnector.configure { |c| c.minimum_web_connector_client_version = nil }
+      swap QuickbooksWebConnector.config, minimum_web_connector_client_version: nil do
+        expect(response).to be_a(QuickbooksWebConnector::SoapWrapper::ClientVersionResponse)
+        expect(response.clientVersionResult).to be_nil
+      end
     end
 
     it 'returns nil when the client version passes the minimum configured version' do
-      QuickbooksWebConnector.configure { |c| c.minimum_web_connector_client_version = '1.0.0' }
-
-      expect(response).to be_a(QuickbooksWebConnector::SoapWrapper::ClientVersionResponse)
-      expect(response.clientVersionResult).to be_nil
-
-      QuickbooksWebConnector.configure { |c| c.minimum_web_connector_client_version = nil }
+      swap QuickbooksWebConnector.config, minimum_web_connector_client_version: '1.0.0' do
+        expect(response).to be_a(QuickbooksWebConnector::SoapWrapper::ClientVersionResponse)
+        expect(response.clientVersionResult).to be_nil
+      end
     end
 
     it 'returns an error when the client version fails the minimum configured version' do
-      QuickbooksWebConnector.configure { |c| c.minimum_web_connector_client_version = '3.0.0' }
-
-      expect(response).to be_a(QuickbooksWebConnector::SoapWrapper::ClientVersionResponse)
-      expect(response.clientVersionResult).to eq('E:This version of QuickBooks Web Connector is outdated. Version 3.0.0 or greater is required.')
-
-      QuickbooksWebConnector.configure { |c| c.minimum_web_connector_client_version = nil }
+      swap QuickbooksWebConnector.config, minimum_web_connector_client_version: '3.0.0' do
+        expect(response).to be_a(QuickbooksWebConnector::SoapWrapper::ClientVersionResponse)
+        expect(response.clientVersionResult).to eq('E:This version of QuickBooks Web Connector is outdated. Version 3.0.0 or greater is required.')
+      end
     end
   end
 
@@ -60,17 +52,9 @@ describe QuickbooksWebConnector::SoapWrapper::QBWebConnectorSvcSoap do
     end
 
     context 'authorized' do
-      before do
-        QuickbooksWebConnector.configure do |c|
-          c.username = 'foo'
-          c.password = 'bar'
-        end
-      end
-
-      after do
-        QuickbooksWebConnector.configure do |c|
-          c.username = 'web_connector'
-          c.password = 'secret'
+      around do |example|
+        swap QuickbooksWebConnector.config, username: 'foo', password: 'bar' do
+          example.run
         end
       end
 
@@ -81,15 +65,17 @@ describe QuickbooksWebConnector::SoapWrapper::QBWebConnectorSvcSoap do
       end
 
       context 'has work to do' do
+        around do |example|
+          swap QuickbooksWebConnector.config, company_file_path: '/path/to/company.qbw' do
+            example.run
+          end
+        end
+
         before do
           QuickbooksWebConnector.enqueue '<some><xml></xml></some>', SomeHandler
 
-          QuickbooksWebConnector.configure { |c| c.company_file_path = '/path/to/company.qbw' }
-
           allow(SecureRandom).to receive(:uuid).and_return('71f1f9d9-8012-487c-af33-c84bab4d4ded')
         end
-
-        after { QuickbooksWebConnector.configure { |c| c.company_file_path = '' } }
 
         it { should be_a QuickbooksWebConnector::SoapWrapper::AuthenticateResponse }
 

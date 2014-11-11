@@ -3,17 +3,15 @@ require 'rexml/document'
 
 RSpec.describe 'quickbooks_web_connector/qwc/qwc', type: :view do
 
-  before do
-    QuickbooksWebConnector.configure do |c|
-      c.username = 'jsmith'
-      c.app_name = 'My Connector'
-      c.app_description = 'Sample description for app'
+  around do |example|
+    swap QuickbooksWebConnector.config, username: 'jsmith', app_name: 'My Connector', app_description: 'Sample description for app' do
+      example.run
     end
-
-    render
   end
 
-  after { QuickbooksWebConnector.configure { |c| c.username = 'web_connector' } }
+  before do
+    render
+  end
 
   let(:root) { REXML::Document.new(rendered).root }
 

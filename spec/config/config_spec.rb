@@ -9,11 +9,9 @@ describe QuickbooksWebConnector::Configuration do
     end
 
     it 'allows the server_version to be configured' do
-      QuickbooksWebConnector.configure { |c| c.server_version = '1.2.3' }
-
-      expect(configuration.server_version).to eq('1.2.3')
-
-      QuickbooksWebConnector.configure { |c| c.server_version = '1.0.0' }
+      swap QuickbooksWebConnector.config, server_version: '1.2.3' do
+        expect(configuration.server_version).to eq('1.2.3')
+      end
     end
   end
 
@@ -23,11 +21,9 @@ describe QuickbooksWebConnector::Configuration do
     end
 
     it 'allows the minimum_web_connector_client_version to be configured' do
-      QuickbooksWebConnector.configure { |c| c.minimum_web_connector_client_version = '2.1.0.30' }
-
-      expect(configuration.minimum_web_connector_client_version).to eq('2.1.0.30')
-
-      QuickbooksWebConnector.configure { |c| c.minimum_web_connector_client_version = nil }
+      swap QuickbooksWebConnector.config, minimum_web_connector_client_version: '2.1.0.30' do
+        expect(configuration.minimum_web_connector_client_version).to eq('2.1.0.30')
+      end
     end
   end
 
@@ -37,11 +33,9 @@ describe QuickbooksWebConnector::Configuration do
     end
 
     it 'allows the username to be configured' do
-      QuickbooksWebConnector.configure { |c| c.username = 'jsmith' }
-
-      expect(configuration.username).to eq('jsmith')
-
-      QuickbooksWebConnector.configure { |c| c.username = 'web_connector' }
+      swap QuickbooksWebConnector.config, username: 'jsmith' do
+        expect(configuration.username).to eq('jsmith')
+      end
     end
   end
 
@@ -51,11 +45,9 @@ describe QuickbooksWebConnector::Configuration do
     end
 
     it 'allows the password to be configured' do
-      QuickbooksWebConnector.configure { |c| c.password = 'quickbooks' }
-
-      expect(configuration.password).to eq('quickbooks')
-
-      QuickbooksWebConnector.configure { |c| c.password = 'secret' }
+      swap QuickbooksWebConnector.config, password: 'quickbooks' do
+        expect(configuration.password).to eq('quickbooks')
+      end
     end
   end
 
@@ -65,11 +57,9 @@ describe QuickbooksWebConnector::Configuration do
     end
 
     it 'allows the company_file_path to be configured' do
-      QuickbooksWebConnector.configure { |c| c.company_file_path = '/path/to/company.qbw' }
-
-      expect(configuration.company_file_path).to eq('/path/to/company.qbw')
-
-      QuickbooksWebConnector.configure { |c| c.company_file_path = '' }
+      swap QuickbooksWebConnector.config, company_file_path: '/path/to/company.qbw' do
+        expect(configuration.company_file_path).to eq('/path/to/company.qbw')
+      end
     end
   end
 
@@ -79,11 +69,9 @@ describe QuickbooksWebConnector::Configuration do
     end
 
     it 'allows the parent_controller to be configured' do
-      QuickbooksWebConnector.configure { |c| c.parent_controller = 'MyController' }
-
-      expect(configuration.parent_controller).to eq('MyController')
-
-      QuickbooksWebConnector.configure { |c| c.parent_controller = 'ApplicationController' }
+      swap QuickbooksWebConnector.config, parent_controller: 'MyController' do
+        expect(configuration.parent_controller).to eq('MyController')
+      end
     end
   end
 
@@ -93,11 +81,9 @@ describe QuickbooksWebConnector::Configuration do
     end
 
     it 'allows the app_name to be configured' do
-      QuickbooksWebConnector.configure { |c| c.app_name = 'Sample App' }
-
-      expect(configuration.app_name).to eq('Sample App')
-
-      QuickbooksWebConnector.configure { |c| c.app_name = 'My QBWC App' }
+      swap QuickbooksWebConnector.config, app_name: 'Sample App' do
+        expect(configuration.app_name).to eq('Sample App')
+      end
     end
   end
 
@@ -107,11 +93,9 @@ describe QuickbooksWebConnector::Configuration do
     end
 
     it 'allows the app_description to be configured' do
-      QuickbooksWebConnector.configure { |c| c.app_description = 'Sample Description' }
-
-      expect(configuration.app_description).to eq('Sample Description')
-
-      QuickbooksWebConnector.configure { |c| c.app_description = 'My QBWC App Description' }
+      swap QuickbooksWebConnector.config, app_description: 'Sample Description' do
+        expect(configuration.app_description).to eq('Sample Description')
+      end
     end
   end
 
