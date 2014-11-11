@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'QuickbooksWebConnector routing' do
+RSpec.describe 'QuickbooksWebConnector routing', type: :routing do
 
   routes { QuickbooksWebConnector::Engine.routes }
 

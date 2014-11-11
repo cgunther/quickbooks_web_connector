@@ -1,131 +1,118 @@
 require 'spec_helper'
 
 describe QuickbooksWebConnector::Configuration do
-  subject { QuickbooksWebConnector.config }
+  subject(:configuration) { QuickbooksWebConnector.config }
 
   describe 'server_version' do
-
-    context 'by default' do
-      its(:server_version) { should eq '1.0.0' }
+    it 'returns 1.0.0 by default' do
+      expect(configuration.server_version).to eq('1.0.0')
     end
 
-    context 'configured via config block' do
-      before { QuickbooksWebConnector.configure { |c| c.server_version = '1.2.3' } }
+    it 'allows the server_version to be configured' do
+      QuickbooksWebConnector.configure { |c| c.server_version = '1.2.3' }
 
-      its(:server_version) { should eq '1.2.3' }
+      expect(configuration.server_version).to eq('1.2.3')
 
-      after { QuickbooksWebConnector.configure { |c| c.server_version = '1.0.0' } }
+      QuickbooksWebConnector.configure { |c| c.server_version = '1.0.0' }
     end
-
   end
 
   describe 'minimum_web_connector_client_version' do
-
-    context 'by default' do
-      its(:minimum_web_connector_client_version) { should be_nil }
+    it 'sets no minimum by default' do
+      expect(configuration.minimum_web_connector_client_version).to be_nil
     end
 
-    context 'configured via config block' do
-      before { QuickbooksWebConnector.configure { |c| c.minimum_web_connector_client_version = '2.1.0.30' } }
+    it 'allows the minimum_web_connector_client_version to be configured' do
+      QuickbooksWebConnector.configure { |c| c.minimum_web_connector_client_version = '2.1.0.30' }
 
-      its(:minimum_web_connector_client_version) { should eq '2.1.0.30' }
+      expect(configuration.minimum_web_connector_client_version).to eq('2.1.0.30')
 
-      after { QuickbooksWebConnector.configure { |c| c.minimum_web_connector_client_version = nil } }
+      QuickbooksWebConnector.configure { |c| c.minimum_web_connector_client_version = nil }
     end
-
   end
 
   context 'username' do
-
-    context 'by default' do
-      its(:username) { should eq 'web_connector' }
+    it 'uses web_connector by default' do
+      expect(configuration.username).to eq('web_connector')
     end
 
-    context 'configured via a config block' do
-      before { QuickbooksWebConnector.configure { |c| c.username = 'jsmith' } }
+    it 'allows the username to be configured' do
+      QuickbooksWebConnector.configure { |c| c.username = 'jsmith' }
 
-      its(:username) { should eq 'jsmith' }
+      expect(configuration.username).to eq('jsmith')
 
-      after { QuickbooksWebConnector.configure { |c| c.username = 'web_connector' } }
+      QuickbooksWebConnector.configure { |c| c.username = 'web_connector' }
     end
   end
 
   context 'password' do
-
-    context 'by default' do
-      its(:password) { should eq 'secret' }
+    it 'uses secret by default' do
+      expect(configuration.password).to eq('secret')
     end
 
-    context 'configured via a config block' do
-      before { QuickbooksWebConnector.configure { |c| c.password = 'quickbooks' } }
+    it 'allows the password to be configured' do
+      QuickbooksWebConnector.configure { |c| c.password = 'quickbooks' }
 
-      its(:password) { should eq 'quickbooks' }
+      expect(configuration.password).to eq('quickbooks')
 
-      after { QuickbooksWebConnector.configure { |c| c.password = 'secret' } }
+      QuickbooksWebConnector.configure { |c| c.password = 'secret' }
     end
   end
 
   context 'company_file_path' do
-
-    context 'by default' do
-      its(:company_file_path) { should eq '' }
+    it 'sets no path by default' do
+      expect(configuration.company_file_path).to eq('')
     end
 
-    context 'configured via a config block' do
-      before { QuickbooksWebConnector.configure { |c| c.company_file_path = '/path/to/company.qbw' } }
+    it 'allows the company_file_path to be configured' do
+      QuickbooksWebConnector.configure { |c| c.company_file_path = '/path/to/company.qbw' }
 
-      its(:company_file_path) { should eq '/path/to/company.qbw' }
+      expect(configuration.company_file_path).to eq('/path/to/company.qbw')
 
-      after { QuickbooksWebConnector.configure { |c| c.company_file_path = '' } }
+      QuickbooksWebConnector.configure { |c| c.company_file_path = '' }
     end
   end
 
   describe 'parent_controller' do
-
-    context 'by default' do
-      its(:parent_controller) { should eq 'ApplicationController' }
+    it 'uses ApplicationController by default' do
+      expect(configuration.parent_controller).to eq('ApplicationController')
     end
 
-    context 'configured via config block' do
-      before { QuickbooksWebConnector.configure { |c| c.parent_controller = 'MyController' } }
+    it 'allows the parent_controller to be configured' do
+      QuickbooksWebConnector.configure { |c| c.parent_controller = 'MyController' }
 
-      its(:parent_controller) { should eq 'MyController' }
+      expect(configuration.parent_controller).to eq('MyController')
 
-      after { QuickbooksWebConnector.configure { |c| c.parent_controller = 'ApplicationController' } }
+      QuickbooksWebConnector.configure { |c| c.parent_controller = 'ApplicationController' }
     end
-
   end
 
   describe 'app_name' do
-
-    context 'by default' do
-      its(:app_name) { should eq 'My QBWC App' }
+    it 'uses My QBWC App by default' do
+      expect(configuration.app_name).to eq('My QBWC App')
     end
 
-    context 'configured via a config block' do
-      before { QuickbooksWebConnector.configure { |c| c.app_name = 'Sample App' } }
+    it 'allows the app_name to be configured' do
+      QuickbooksWebConnector.configure { |c| c.app_name = 'Sample App' }
 
-      its(:app_name) { should eq 'Sample App' }
+      expect(configuration.app_name).to eq('Sample App')
 
-      after { QuickbooksWebConnector.configure { |c| c.app_name = 'My QBWC App' } }
+      QuickbooksWebConnector.configure { |c| c.app_name = 'My QBWC App' }
     end
-
   end
 
   describe 'app_description' do
-
-    context 'by default' do
-      its(:app_description) { should eq 'My QBWC App Description' }
+    it 'sets a default description' do
+      expect(configuration.app_description).to eq('My QBWC App Description')
     end
 
-    context 'configured via a config block' do
-      before { QuickbooksWebConnector.configure { |c| c.app_description = 'Sample Description' } }
+    it 'allows the app_description to be configured' do
+      QuickbooksWebConnector.configure { |c| c.app_description = 'Sample Description' }
 
-      its(:app_description) { should eq 'Sample Description' }
+      expect(configuration.app_description).to eq('Sample Description')
 
-      after { QuickbooksWebConnector.configure { |c| c.app_description = 'My QBWC App Description' } }
+      QuickbooksWebConnector.configure { |c| c.app_description = 'My QBWC App Description' }
     end
-
   end
 
 end

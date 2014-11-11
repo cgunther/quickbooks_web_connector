@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe QuickbooksWebConnector::SoapController do
+RSpec.describe QuickbooksWebConnector::SoapController, type: :controller do
 
   # QWC will perform a GET to check the certificate, so we gotta respond
   describe 'GET :endpoint' do

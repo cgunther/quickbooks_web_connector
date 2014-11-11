@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe QuickbooksWebConnector::QwcController do
+RSpec.describe QuickbooksWebConnector::QwcController, type: :controller do
 
   describe 'GET :download' do
     before { get :download, format: :xml, use_route: 'quickbooks_web_connector' }

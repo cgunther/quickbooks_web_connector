@@ -32,11 +32,11 @@ describe QuickbooksWebConnector::Failure do
     it 'removes the failed job from the list' do
       described_class.create(exception: Exception.new, payload: {})
 
-      expect(described_class.all).to have(1).job
+      expect(described_class.all.size).to eq(1)
 
       described_class.remove(0)
 
-      expect(described_class.all).to have(0).jobs
+      expect(described_class.all.size).to eq(0)
     end
   end
 

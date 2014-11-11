@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'rexml/document'
 
-describe 'quickbooks_web_connector/qwc/qwc' do
+RSpec.describe 'quickbooks_web_connector/qwc/qwc', type: :view do
 
   before do
     QuickbooksWebConnector.configure do |c|

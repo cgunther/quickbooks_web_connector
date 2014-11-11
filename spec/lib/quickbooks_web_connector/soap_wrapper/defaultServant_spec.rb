@@ -6,44 +6,45 @@ describe QuickbooksWebConnector::SoapWrapper::QBWebConnectorSvcSoap do
   describe 'serverVersion' do
     subject(:response) { servant.serverVersion(double(:parameters)) }
 
-    before { QuickbooksWebConnector.configure { |c| c.server_version = '1.2.3' } }
+    it 'returns returns the configured server_version' do
+      QuickbooksWebConnector.configure { |c| c.server_version = '1.2.3' }
 
-    it { should be_a QuickbooksWebConnector::SoapWrapper::ServerVersionResponse }
-    its(:serverVersionResult) { should eq '1.2.3' }
+      expect(response).to be_a(QuickbooksWebConnector::SoapWrapper::ServerVersionResponse)
+      expect(response.serverVersionResult).to eq('1.2.3')
 
-    after { QuickbooksWebConnector.configure { |c| c.server_version = '1.0.0' } }
+      QuickbooksWebConnector.configure { |c| c.server_version = '1.0.0' }
+    end
   end
 
   describe 'clientVersion' do
     subject(:response) { servant.clientVersion(double(:parameters, strVersion: '2.1.0.30')) }
 
-    context 'no minimum version set' do
-      before { QuickbooksWebConnector.configure { |c| c.minimum_web_connector_client_version = nil } }
+    it 'returns nil when no minimum version has been configured' do
+      QuickbooksWebConnector.configure { |c| c.minimum_web_connector_client_version = nil }
 
-      it { should be_a QuickbooksWebConnector::SoapWrapper::ClientVersionResponse }
-      its(:clientVersionResult) { should be_nil }
+      expect(response).to be_a(QuickbooksWebConnector::SoapWrapper::ClientVersionResponse)
+      expect(response.clientVersionResult).to be_nil
 
-      after { QuickbooksWebConnector.configure { |c| c.minimum_web_connector_client_version = nil } }
+      QuickbooksWebConnector.configure { |c| c.minimum_web_connector_client_version = nil }
     end
 
-    context 'current version passes minimum version check' do
-      before { QuickbooksWebConnector.configure { |c| c.minimum_web_connector_client_version = '1.0.0' } }
+    it 'returns nil when the client version passes the minimum configured version' do
+      QuickbooksWebConnector.configure { |c| c.minimum_web_connector_client_version = '1.0.0' }
 
-      it { should be_a QuickbooksWebConnector::SoapWrapper::ClientVersionResponse }
-      its(:clientVersionResult) { should be_nil }
+      expect(response).to be_a(QuickbooksWebConnector::SoapWrapper::ClientVersionResponse)
+      expect(response.clientVersionResult).to be_nil
 
-      after { QuickbooksWebConnector.configure { |c| c.minimum_web_connector_client_version = nil } }
+      QuickbooksWebConnector.configure { |c| c.minimum_web_connector_client_version = nil }
     end
 
-    context 'current version fails minimum version check' do
-      before { QuickbooksWebConnector.configure { |c| c.minimum_web_connector_client_version = '3.0.0' } }
+    it 'returns an error when the client version fails the minimum configured version' do
+      QuickbooksWebConnector.configure { |c| c.minimum_web_connector_client_version = '3.0.0' }
 
-      it { should be_a QuickbooksWebConnector::SoapWrapper::ClientVersionResponse }
-      its(:clientVersionResult) { should eq 'E:This version of QuickBooks Web Connector is outdated. Version 3.0.0 or greater is required.' }
+      expect(response).to be_a(QuickbooksWebConnector::SoapWrapper::ClientVersionResponse)
+      expect(response.clientVersionResult).to eq('E:This version of QuickBooks Web Connector is outdated. Version 3.0.0 or greater is required.')
 
-      after { QuickbooksWebConnector.configure { |c| c.minimum_web_connector_client_version = nil } }
+      QuickbooksWebConnector.configure { |c| c.minimum_web_connector_client_version = nil }
     end
-
   end
 
   describe 'authenticate' do
@@ -120,13 +121,13 @@ describe QuickbooksWebConnector::SoapWrapper::QBWebConnectorSvcSoap do
   describe 'sendRequestXML' do
     subject(:response) { servant.sendRequestXML(double(:parameters)) }
 
-    before do
+    it 'returns the resulting XML for the next job' do
       SomeBuilder.stub(:perform).with(1).and_return('<some><xml></xml></some>')
       QuickbooksWebConnector.enqueue SomeBuilder, SomeHandler, 1
-    end
 
-    it { should be_a QuickbooksWebConnector::SoapWrapper::SendRequestXMLResponse }
-    its(:sendRequestXMLResult) { should eq '<some><xml></xml></some>' }
+      expect(response).to be_a(QuickbooksWebConnector::SoapWrapper::SendRequestXMLResponse)
+      expect(response.sendRequestXMLResult).to eq('<some><xml></xml></some>')
+    end
   end
 
   describe 'receiveResponseXML' do
