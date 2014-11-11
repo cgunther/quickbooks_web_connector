@@ -159,7 +159,7 @@ RSpec.describe QuickbooksWebConnector::SoapController, type: :controller do
       end
 
       it 'returns the company_file_path when theres data to send' do
-        SomeBuilder.stub(:perform).with(1).and_return('<some><xml></xml></some>')
+        allow(SomeBuilder).to receive(:perform).with(1).and_return('<some><xml></xml></some>')
         QuickbooksWebConnector.enqueue SomeBuilder, SomeHandler, 1
 
         do_post
@@ -202,7 +202,7 @@ RSpec.describe QuickbooksWebConnector::SoapController, type: :controller do
       # </env:Envelope>
 
       before do
-        SomeBuilder.stub(:perform).with(1).and_return('<some><xml></xml></some>')
+        allow(SomeBuilder).to receive(:perform).with(1).and_return('<some><xml></xml></some>')
         QuickbooksWebConnector.enqueue SomeBuilder, SomeHandler, 1
 
         do_post

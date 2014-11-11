@@ -86,7 +86,7 @@ describe QuickbooksWebConnector::SoapWrapper::QBWebConnectorSvcSoap do
 
           QuickbooksWebConnector.configure { |c| c.company_file_path = '/path/to/company.qbw' }
 
-          SecureRandom.stub uuid: '71f1f9d9-8012-487c-af33-c84bab4d4ded'
+          allow(SecureRandom).to receive(:uuid).and_return('71f1f9d9-8012-487c-af33-c84bab4d4ded')
         end
 
         after { QuickbooksWebConnector.configure { |c| c.company_file_path = '' } }
@@ -122,7 +122,7 @@ describe QuickbooksWebConnector::SoapWrapper::QBWebConnectorSvcSoap do
     subject(:response) { servant.sendRequestXML(double(:parameters)) }
 
     it 'returns the resulting XML for the next job' do
-      SomeBuilder.stub(:perform).with(1).and_return('<some><xml></xml></some>')
+      allow(SomeBuilder).to receive(:perform).with(1).and_return('<some><xml></xml></some>')
       QuickbooksWebConnector.enqueue SomeBuilder, SomeHandler, 1
 
       expect(response).to be_a(QuickbooksWebConnector::SoapWrapper::SendRequestXMLResponse)
@@ -135,7 +135,7 @@ describe QuickbooksWebConnector::SoapWrapper::QBWebConnectorSvcSoap do
 
     before do
       QuickbooksWebConnector.enqueue '<request><xml></xml></request>', SomeHandler, 1
-      SomeHandler.should_receive(:perform).with('<response><xml></xml></response>', 1)
+      expect(SomeHandler).to receive(:perform).with('<response><xml></xml></response>', 1)
     end
 
     it 'returns 100 when no more jobs are left' do

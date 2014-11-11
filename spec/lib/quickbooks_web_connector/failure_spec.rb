@@ -5,8 +5,8 @@ describe QuickbooksWebConnector::Failure do
   describe '.create' do
     it 'creates a new failure and saves it' do
       failure = double(:failure)
-      failure.should_receive(:save)
-      described_class.should_receive(:new).with(Exception, { foo: 'bar' }).and_return(failure)
+      expect(failure).to receive(:save)
+      expect(described_class).to receive(:new).with(Exception, { foo: 'bar' }).and_return(failure)
 
       described_class.create(exception: Exception, payload: { foo: 'bar' })
     end
