@@ -7,10 +7,10 @@ describe QuickbooksWebConnector::SoapWrapper::QBWebConnectorSvcSoap do
     subject(:response) { servant.serverVersion(double(:parameters)) }
 
     it 'returns returns the configured server_version' do
-      swap QuickbooksWebConnector.config, server_version: '1.2.3' do
-        expect(response).to be_a(QuickbooksWebConnector::SoapWrapper::ServerVersionResponse)
-        expect(response.serverVersionResult).to eq('1.2.3')
-      end
+      QuickbooksWebConnector.config.server_version = '1.2.3'
+
+      expect(response).to be_a(QuickbooksWebConnector::SoapWrapper::ServerVersionResponse)
+      expect(response.serverVersionResult).to eq('1.2.3')
     end
   end
 
@@ -18,24 +18,24 @@ describe QuickbooksWebConnector::SoapWrapper::QBWebConnectorSvcSoap do
     subject(:response) { servant.clientVersion(double(:parameters, strVersion: '2.1.0.30')) }
 
     it 'returns nil when no minimum version has been configured' do
-      swap QuickbooksWebConnector.config, minimum_web_connector_client_version: nil do
-        expect(response).to be_a(QuickbooksWebConnector::SoapWrapper::ClientVersionResponse)
-        expect(response.clientVersionResult).to be_nil
-      end
+      QuickbooksWebConnector.config.minimum_web_connector_client_version = nil
+
+      expect(response).to be_a(QuickbooksWebConnector::SoapWrapper::ClientVersionResponse)
+      expect(response.clientVersionResult).to be_nil
     end
 
     it 'returns nil when the client version passes the minimum configured version' do
-      swap QuickbooksWebConnector.config, minimum_web_connector_client_version: '1.0.0' do
-        expect(response).to be_a(QuickbooksWebConnector::SoapWrapper::ClientVersionResponse)
-        expect(response.clientVersionResult).to be_nil
-      end
+      QuickbooksWebConnector.config.minimum_web_connector_client_version = '1.0.0'
+
+      expect(response).to be_a(QuickbooksWebConnector::SoapWrapper::ClientVersionResponse)
+      expect(response.clientVersionResult).to be_nil
     end
 
     it 'returns an error when the client version fails the minimum configured version' do
-      swap QuickbooksWebConnector.config, minimum_web_connector_client_version: '3.0.0' do
-        expect(response).to be_a(QuickbooksWebConnector::SoapWrapper::ClientVersionResponse)
-        expect(response.clientVersionResult).to eq('E:This version of QuickBooks Web Connector is outdated. Version 3.0.0 or greater is required.')
-      end
+      QuickbooksWebConnector.config.minimum_web_connector_client_version = '3.0.0'
+
+      expect(response).to be_a(QuickbooksWebConnector::SoapWrapper::ClientVersionResponse)
+      expect(response.clientVersionResult).to eq('E:This version of QuickBooks Web Connector is outdated. Version 3.0.0 or greater is required.')
     end
   end
 
@@ -52,9 +52,10 @@ describe QuickbooksWebConnector::SoapWrapper::QBWebConnectorSvcSoap do
     end
 
     context 'authorized' do
-      around do |example|
-        swap QuickbooksWebConnector.config, username: 'foo', password: 'bar' do
-          example.run
+      before do
+        QuickbooksWebConnector.configure do |config|
+          config.username = 'foo'
+          config.password = 'bar'
         end
       end
 
@@ -65,13 +66,8 @@ describe QuickbooksWebConnector::SoapWrapper::QBWebConnectorSvcSoap do
       end
 
       context 'has work to do' do
-        around do |example|
-          swap QuickbooksWebConnector.config, company_file_path: '/path/to/company.qbw' do
-            example.run
-          end
-        end
-
         before do
+          QuickbooksWebConnector.config.company_file_path = '/path/to/company.qbw'
           QuickbooksWebConnector.enqueue '<some><xml></xml></some>', SomeHandler
 
           allow(SecureRandom).to receive(:uuid).and_return('71f1f9d9-8012-487c-af33-c84bab4d4ded')

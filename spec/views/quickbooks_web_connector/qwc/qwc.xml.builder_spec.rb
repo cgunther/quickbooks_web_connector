@@ -3,13 +3,13 @@ require 'rexml/document'
 
 RSpec.describe 'quickbooks_web_connector/qwc/qwc', type: :view do
 
-  around do |example|
-    swap QuickbooksWebConnector.config, username: 'jsmith', app_name: 'My Connector', app_description: 'Sample description for app' do
-      example.run
-    end
-  end
-
   before do
+    QuickbooksWebConnector.configure do |config|
+      config.username = 'jsmith'
+      config.app_name = 'My Connector'
+      config.app_description = 'Sample description for app'
+    end
+
     render
   end
 

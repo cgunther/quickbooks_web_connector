@@ -14,6 +14,26 @@ module QuickbooksWebConnector
     @config
   end
 
+  def self.reset_configuration!
+    @config = QuickbooksWebConnector::Configuration.new
+    set_default_configuration
+  end
+
+  def self.set_default_configuration
+    configure do |config|
+      config.server_version = '1.0.0'
+      config.minimum_web_connector_client_version = nil
+      config.username = 'web_connector'
+      config.password = 'secret'
+      config.company_file_path = ''
+
+      config.parent_controller = 'ApplicationController'
+
+      config.app_name = 'My QBWC App'
+      config.app_description = 'My QBWC App Description'
+    end
+  end
+
   class Configuration
     include ActiveSupport::Configurable
 
@@ -29,17 +49,6 @@ module QuickbooksWebConnector
     config_accessor :app_description
   end
 
-  configure do |config|
-    config.server_version = '1.0.0'
-    config.minimum_web_connector_client_version = nil
-    config.username = 'web_connector'
-    config.password = 'secret'
-    config.company_file_path = ''
-
-    config.parent_controller = 'ApplicationController'
-
-    config.app_name = 'My QBWC App'
-    config.app_description = 'My QBWC App Description'
-  end
+  set_default_configuration
 
 end

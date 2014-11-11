@@ -46,13 +46,11 @@ RSpec.describe QuickbooksWebConnector::SoapController, type: :controller do
       #    </env:Body>
       # </env:Envelope>
 
-      around do |example|
-        swap QuickbooksWebConnector.config, server_version: '1.2.3' do
-          example.run
-        end
-      end
+      before do
+        QuickbooksWebConnector.config.server_version = '1.2.3'
 
-      before { post :endpoint, { use_route: 'quickbooks_web_connector' } }
+        post :endpoint, { use_route: 'quickbooks_web_connector' }
+      end
 
       it 'responds with success' do
         expect(response).to be_success
@@ -136,9 +134,11 @@ RSpec.describe QuickbooksWebConnector::SoapController, type: :controller do
       #   </env:Body>
       # </env:Envelope>
 
-      around do |example|
-        swap QuickbooksWebConnector.config, username: 'foo', password: 'bar', company_file_path: "C:\\path\\to\\company.qbw" do
-          example.run
+      before do
+        QuickbooksWebConnector.configure do |config|
+          config.username = 'foo'
+          config.password = 'bar'
+          config.company_file_path = "C:\\path\\to\\company.qbw"
         end
       end
 

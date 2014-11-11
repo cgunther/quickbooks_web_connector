@@ -31,6 +31,7 @@ RSpec.configure do |config|
 
   config.before(:each) do
     QuickbooksWebConnector.redis.flushall
+    QuickbooksWebConnector.reset_configuration!
   end
 
   # Kill our own redis we started
