@@ -1,5 +1,8 @@
 ### Unreleased
 
+* enhancements
+  * Allow multiple users to sync with the same company file accessible at different paths for each user
+
 ### 0.5.0 - 2014-11-04
 
 * enhancements

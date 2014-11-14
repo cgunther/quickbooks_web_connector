@@ -53,10 +53,7 @@ describe QuickbooksWebConnector::SoapWrapper::QBWebConnectorSvcSoap do
 
     context 'authorized' do
       before do
-        QuickbooksWebConnector.configure do |config|
-          config.username = 'foo'
-          config.password = 'bar'
-        end
+        QuickbooksWebConnector.config.user 'foo', 'bar', '/path/to/company.qbw'
       end
 
       context 'has no data to send' do
@@ -67,7 +64,6 @@ describe QuickbooksWebConnector::SoapWrapper::QBWebConnectorSvcSoap do
 
       context 'has work to do' do
         before do
-          QuickbooksWebConnector.config.company_file_path = '/path/to/company.qbw'
           QuickbooksWebConnector.enqueue '<some><xml></xml></some>', SomeHandler
 
           allow(SecureRandom).to receive(:uuid).and_return('71f1f9d9-8012-487c-af33-c84bab4d4ded')

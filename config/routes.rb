@@ -1,6 +1,6 @@
 QuickbooksWebConnector::Engine.routes.draw do
 
-  get 'qwc' => 'qwc#download', defaults: { format: :xml }
+  get 'qwc/:username' => 'qwc#download', as: :qwc, defaults: { format: :xml }
   post 'soap' => 'soap#endpoint'
 
   # QWC will perform a GET request to verify the SSL certificate

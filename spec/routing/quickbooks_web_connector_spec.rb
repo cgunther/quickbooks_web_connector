@@ -5,7 +5,7 @@ RSpec.describe 'QuickbooksWebConnector routing', type: :routing do
   routes { QuickbooksWebConnector::Engine.routes }
 
   it 'defaults to XML for downloading QWC' do
-    expect(get: '/qwc').to route_to(controller: 'quickbooks_web_connector/qwc', action: 'download', format: :xml)
+    expect(get: '/qwc/jane').to route_to(controller: 'quickbooks_web_connector/qwc', action: 'download', username: 'jane', format: :xml)
   end
 
   it 'routes the SOAP endpoint' do

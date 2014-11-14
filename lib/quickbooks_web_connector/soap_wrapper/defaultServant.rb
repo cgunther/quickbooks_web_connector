@@ -45,12 +45,15 @@ module QuickbooksWebConnector
       #
       def authenticate(parameters)
         token = SecureRandom.uuid
-        result = if parameters.strUserName == QuickbooksWebConnector.config.username && parameters.strPassword == QuickbooksWebConnector.config.password
+
+        user = QuickbooksWebConnector.config.users[parameters.strUserName]
+
+        result = if user && user.valid_password?(parameters.strPassword)
           if QuickbooksWebConnector.size > 0
             # Store how many jobs are queued so we can track progress later
             QuickbooksWebConnector.store_job_count_for_session
 
-            QuickbooksWebConnector.config.company_file_path
+            user.company_file_path
           else
             'none'
           end

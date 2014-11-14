@@ -27,39 +27,15 @@ describe QuickbooksWebConnector::Configuration do
     end
   end
 
-  context 'username' do
-    it 'uses web_connector by default' do
-      expect(configuration.username).to eq('web_connector')
+  describe 'user' do
+    it 'defaults to no users' do
+      expect(configuration.users).to be_empty
     end
 
-    it 'allows the username to be configured' do
-      QuickbooksWebConnector.config.username = 'jsmith'
+    it 'adds a new user' do
+      configuration.user 'jane', 'secret', '/path/to/company.qbw'
 
-      expect(configuration.username).to eq('jsmith')
-    end
-  end
-
-  context 'password' do
-    it 'uses secret by default' do
-      expect(configuration.password).to eq('secret')
-    end
-
-    it 'allows the password to be configured' do
-      QuickbooksWebConnector.config.password = 'quickbooks'
-
-      expect(configuration.password).to eq('quickbooks')
-    end
-  end
-
-  context 'company_file_path' do
-    it 'sets no path by default' do
-      expect(configuration.company_file_path).to eq('')
-    end
-
-    it 'allows the company_file_path to be configured' do
-      QuickbooksWebConnector.config.company_file_path = '/path/to/company.qbw'
-
-      expect(configuration.company_file_path).to eq('/path/to/company.qbw')
+      expect(configuration.users.size).to eq(1)
     end
   end
 

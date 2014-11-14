@@ -135,11 +135,7 @@ RSpec.describe QuickbooksWebConnector::SoapController, type: :controller do
       # </env:Envelope>
 
       before do
-        QuickbooksWebConnector.configure do |config|
-          config.username = 'foo'
-          config.password = 'bar'
-          config.company_file_path = "C:\\path\\to\\company.qbw"
-        end
+        QuickbooksWebConnector.config.user 'foo', 'bar', "C:\\path\\to\\company.qbw"
       end
 
       it 'responds that theres no jobs to work when authenticated without jobs' do
