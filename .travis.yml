@@ -10,6 +10,8 @@ gemfile:
   - gemfiles/rails_40.gemfile
   - gemfiles/rails_41.gemfile
 
+sudo: false
+
 notifications:
   hipchat:
     rooms:
