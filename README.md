@@ -96,10 +96,10 @@ mount QuickbooksWebConnector::Engine => "/quickbooks_web_connector"
 Configure it by creating a file in `config/initializers` named `quickbooks_web_connector.rb`
 
 ```ruby
-  QuickbooksWebConnector.configure do |c|
-    # Username, password, path to QBW file
-    c.user 'web_connector', 'top-secret-password', 'C:\path\to\company\file.QBW'
-  end
+QuickbooksWebConnector.configure do |c|
+  # Username, password, path to QBW file
+  c.user 'web_connector', 'top-secret-password', 'C:\path\to\company\file.QBW'
+end
 ```
 
 Now start your application:
