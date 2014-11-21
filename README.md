@@ -10,12 +10,37 @@ Requirements
 
 QuickbooksWebConnector has only been tested on Rails 3.2.9
 
-Overview
+Usage
 --------
 
-QuickbooksWebConnector allows you to create requests and place them on the queue for the Quickbooks Web Connector to fetch, with a response handler to handle the Quickbooks response.
+QuickbooksWebConnector requires you to specify both a request builder and a request handler for generating and processing your job, respectively.
 
-A response handler is a Ruby class than responds to the `perform` method that receives the response XML as a string and any additional arguments you specified when enqueueing the request. Here's an example:
+The request builder is a Ruby class that responds to the `perform` method, which will receives any additional arguments you supply, and returns the XML to be send to QuickBooks. This example uses the [builder](https://github.com/jimweirich/builder) library to generate the XML.
+
+```ruby
+class AddCustomerBuilder
+
+  def self.perform(customer_id)
+    customer = Customer.find(customer_id)
+
+    xml = Builder::XmlMarkup.new
+    xml.instruct!
+    xml.instruct! :qbxml, version: '6.0'
+    xml.QBXML do
+      xml.QBXMLMsgsRq onError: 'stopOnError' do
+        xml.CustomerAddRq do
+          xml.CustomerAdd do
+            xml.Name customer.name
+          end
+        end
+      end
+    end
+  end
+
+end
+```
+
+The response handler is a Ruby class that responds to the `perform` method, which will receive the response XML as a string and any additional arguments you specified when enqueueing the job. This example uses the REXML library to parse the XML response from QuickBooks.
 
 ```ruby
 require 'rexml/document'
@@ -31,7 +56,7 @@ class AddCustomerHandler
 end
 ```
 
-To enqueue a request, you might add this to your model as an `after_create` callback, or maybe your controller's create action:
+To enqueue a job, you might add this to your model as an `after_create` callback, or maybe your controller's create action:
 
 ```ruby
 class Customer
@@ -39,30 +64,10 @@ class Customer
   after_create :add_to_quickbooks
 
   def add_to_quickbooks
-    request_xml = <<-EOT
-      <?xml version="1.0" encoding="UTF-8"?>
-      <?qbxml version="6.0"?>
-      <QBXML>
-        <QBXMLMsgsRq onError="stopOnError">
-          <CustomerAddRq>
-            <CustomerAdd>
-              <Name>FooBar Inc</Name>
-            </CustomerAdd>
-          </CustomerAddRq>
-        </QBXMLMsgsRq>
-      </QBXML>
-    EOT
-
-    QuickbooksWebConnector.enqueue request_xml, AddCustomerHandler, id
+    QuickbooksWebConnector.enqueue AddCustomerBuilder, AddCustomerHandler, id
   end
 
 end
-```
-
-Once Quickbooks Web Connector received your request and processed it, it would return a response, and your handler will get called like:
-
-```ruby
-AddCustomerHandler.perform response_xml, 1
 ```
 
 Installing QuickbooksWebConnector
