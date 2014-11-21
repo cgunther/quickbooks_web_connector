@@ -75,24 +75,21 @@ end
 Installing QuickbooksWebConnector
 =================================
 
-First include it in your Gemfile:
+First, include it in your Gemfile:
 
-```
-$ cat Gemfile
-...
+```ruby
 gem 'quickbooks_web_connector'
-...
 ```
 
-Next install it with Bundler:
+Next, install it with Bundler:
 
 ```
 $ bundle install
 ```
 
-Mount the engine in your routes.rb
+Mount the engine in your routes.rb:
 
-```
+```ruby
 mount QuickbooksWebConnector::Engine => "/quickbooks_web_connector"
 ```
 
@@ -103,6 +100,8 @@ Now start your application:
 ```
 $ rails server
 ```
+
+Now perform some actions in you application that will queue up some jobs, then run the Web Connector application to have QuickBooks process those jobs.
 
 Contributing
 ============
