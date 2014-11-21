@@ -15,11 +15,12 @@ Usage
 
 QuickbooksWebConnector requires you to specify both a request builder and a request handler for generating and processing your job, respectively.
 
-The request builder is a Ruby class that responds to the `perform` method, which will receives any additional arguments you supply, and returns the XML to be send to QuickBooks. This example uses the [builder](https://github.com/jimweirich/builder) library to generate the XML.
+The request builder should be a Ruby class that responds to the `perform` method, which will receive any additional arguments you supply when enqueueing the job, and returns the XML to be sent to QuickBooks. This example uses the [builder](https://github.com/jimweirich/builder) library to generate the XML.
 
 ```ruby
 class AddCustomerBuilder
 
+  # customer_id would be passed as the 3rd argument to QuickbooksWebConnector.enqueue
   def self.perform(customer_id)
     customer = Customer.find(customer_id)
 
@@ -40,13 +41,14 @@ class AddCustomerBuilder
 end
 ```
 
-The response handler is a Ruby class that responds to the `perform` method, which will receive the response XML as a string and any additional arguments you specified when enqueueing the job. This example uses the REXML library to parse the XML response from QuickBooks.
+The response handler should be a Ruby class that responds to the `perform` method, which will receive the response XML as a string and any additional arguments you specified when enqueueing the job. This example uses the REXML library to parse the XML response from QuickBooks.
 
 ```ruby
 require 'rexml/document'
 
 class AddCustomerHandler
 
+  # customer_id would be passed as the 3rd argument to QuickbooksWebConnector.enqueue
   def self.perform(response_xml, customer_id)
     customer = Customer.find(customer_id)
     customer.quickbooks_list_id = REXML::Document.new(response_xml).root.text('QBXMLMsgsRs/CustomerAddRs/CustomerRet/ListID')
@@ -56,7 +58,7 @@ class AddCustomerHandler
 end
 ```
 
-To enqueue a job, you might add this to your model as an `after_create` callback, or maybe your controller's create action:
+To enqueue a job, you might add a line like this to your model as an `after_create` callback, or maybe your controller's create action:
 
 ```ruby
 class Customer
