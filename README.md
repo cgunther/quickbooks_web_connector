@@ -8,7 +8,7 @@ QuickbooksWebConnector is heavily inspired by [QBWC](https://github.com/skryl/qb
 Requirements
 ------------
 
-QuickbooksWebConnector has only been tested on Rails 3.2.9
+QuickbooksWebConnector is tested on Rails 3.2, 4.0, and 4.1 as well as Ruby 1.9, 2.0, and 2.1.
 
 Usage
 --------
