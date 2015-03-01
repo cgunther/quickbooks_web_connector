@@ -10,6 +10,10 @@ gemfile:
   - gemfiles/rails_40.gemfile
   - gemfiles/rails_41.gemfile
 
+matrix:
+  allow_failures:
+    - rvm: 2.2
+
 sudo: false
 
 notifications:
