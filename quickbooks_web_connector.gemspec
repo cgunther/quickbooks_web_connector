@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["spec/**/*"]
 
-  s.required_ruby_version = Gem::Requirement.new(">= 1.9.3")
+  s.required_ruby_version = Gem::Requirement.new(">= 2.0.0")
 
   s.add_dependency "rails", ">= 3.2.9"
   s.add_dependency "soap2r", "~> 1.5.8"
