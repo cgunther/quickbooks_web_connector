@@ -80,4 +80,50 @@ describe QuickbooksWebConnector do
     expect(described_class.session_progress).to eq(100)
   end
 
+  it 'adapts the progress as jobs are added while the sync is running' do
+    described_class.enqueue SomeBuilder, SomeHandler, 1, '/tmp'
+    described_class.enqueue SomeBuilder, SomeHandler, 2, '/tmp'
+    described_class.enqueue SomeBuilder, SomeHandler, 3, '/tmp'
+
+    described_class.store_job_count_for_session
+
+    described_class.enqueue SomeBuilder, SomeHandler, 4, '/tmp'
+
+    expect(described_class.session_progress).to eq(0) # 0 of 4
+
+    described_class.reserve
+
+    described_class.enqueue SomeBuilder, SomeHandler, 5, '/tmp'
+
+    expect(described_class.session_progress).to eq(20) # 1 of 5
+
+    described_class.reserve
+
+    described_class.enqueue SomeBuilder, SomeHandler, 6, '/tmp'
+
+    expect(described_class.session_progress).to eq(34) # 2 of 6
+
+    described_class.reserve
+
+    described_class.enqueue SomeBuilder, SomeHandler, 7, '/tmp'
+
+    expect(described_class.session_progress).to eq(43) # 3 of 7
+
+    described_class.reserve
+
+    expect(described_class.session_progress).to eq(58) # 4 of 7
+
+    described_class.reserve
+
+    expect(described_class.session_progress).to eq(72) # 5 of 7
+
+    described_class.reserve
+
+    expect(described_class.session_progress).to eq(86) # 6 of 7
+
+    described_class.reserve
+
+    expect(described_class.session_progress).to eq(100) # 7 of 7
+  end
+
 end

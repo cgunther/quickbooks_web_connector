@@ -70,6 +70,10 @@ module QuickbooksWebConnector
   # It assumes the class you're passing it is a real Ruby class (not
   # a string or reference).
   def enqueue(request_builder, response_handler, *args)
+    if redis.exists(:queue_size)
+      redis.incr(:queue_size)
+    end
+
     Job.create(request_builder, response_handler, *args)
   end
 
