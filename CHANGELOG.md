@@ -1,5 +1,7 @@
 ### Unreleased
 
+### 0.6.1 - 2014-05-18
+
 * bug fix
   * Improve session progress handling to properly account for jobs enqueued during the session and not stop prematurely once we reach the number of jobs that were queued when the session started
 
