@@ -1,5 +1,7 @@
 ### Unreleased
 
+### 0.6.2 - 2016-11-10
+
 * bug fix
   * Remove jobs that fail to build their request XML from the queue, leaving them in the failure queue so processing can continue with the remaining jobs
 
