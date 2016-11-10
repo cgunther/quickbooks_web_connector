@@ -106,6 +106,15 @@ describe QuickbooksWebConnector::SoapWrapper::QBWebConnectorSvcSoap do
       expect(response).to be_a(QuickbooksWebConnector::SoapWrapper::SendRequestXMLResponse)
       expect(response.sendRequestXMLResult).to eq('<some><xml></xml></some>')
     end
+
+    it 'continues onto the next job when the builder errors' do
+      allow(SomeBuilder).to receive(:perform).with(1).and_return('<some><xml></xml></some>')
+      QuickbooksWebConnector.enqueue SomeBuilderThatErrors, SomeHandler, 1
+      QuickbooksWebConnector.enqueue SomeBuilder, SomeHandler, 1
+
+      expect(response).to be_a(QuickbooksWebConnector::SoapWrapper::SendRequestXMLResponse)
+      expect(response.sendRequestXMLResult).to eq('<some><xml></xml></some>')
+    end
   end
 
   describe 'receiveResponseXML' do

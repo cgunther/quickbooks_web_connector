@@ -78,7 +78,7 @@ module QuickbooksWebConnector
         request_builder_class.perform(*job_args)
       rescue Object => ex
         fail(ex)
-        nil
+        :failed
       end
     end
 

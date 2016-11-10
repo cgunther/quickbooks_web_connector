@@ -3,6 +3,7 @@ require 'securerandom'
 require 'soap/rpc/standaloneServer'
 
 require 'quickbooks_web_connector/config'
+require 'quickbooks_web_connector/errors'
 require 'quickbooks_web_connector/failure'
 require 'quickbooks_web_connector/job'
 require 'quickbooks_web_connector/json_coder'

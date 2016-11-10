@@ -50,6 +50,12 @@ class SomeBuilder
   end
 end
 
+class SomeBuilderThatErrors
+  def self.perform(*args)
+    raise 'FAILURE'
+  end
+end
+
 class SomeHandler
   def self.perform(response_xml, *args)
   end

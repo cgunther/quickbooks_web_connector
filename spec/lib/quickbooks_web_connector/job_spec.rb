@@ -17,7 +17,7 @@ describe QuickbooksWebConnector::Job do
     allow(SomeBuilder).to receive(:perform).and_raise(Exception)
     job = described_class.new 'request_builder_class' => 'SomeBuilder'
 
-    expect { job.request_xml }.to_not raise_exception
+    expect(job.request_xml).to eq(:failed)
 
     expect(QuickbooksWebConnector::Failure.count).to be(1)
   end
