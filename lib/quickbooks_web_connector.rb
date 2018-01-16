@@ -1,5 +1,9 @@
 require 'redis/namespace'
 require 'securerandom'
+# soap2r 1.5.8 uses Logger::Application, but it was extracted to a gem in Ruby 2.2, so require the gem to maintain compatibility
+unless defined?(Logger::Application)
+  require 'logger-application'
+end
 require 'soap/rpc/standaloneServer'
 
 require 'quickbooks_web_connector/config'

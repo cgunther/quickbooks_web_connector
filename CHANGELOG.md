@@ -1,5 +1,8 @@
 ### Unreleased
 
+* enhancements
+  * Add support for Ruby 2.2
+
 ### 0.6.2 - 2016-11-10
 
 * bug fix
