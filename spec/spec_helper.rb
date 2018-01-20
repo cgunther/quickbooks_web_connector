@@ -11,6 +11,17 @@ require 'rexml/document'
 # in spec/support and it's subdirectories
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
 
+# Rails 5 defines a custom params parser for XML that expects a 'hash' key as the root, but our XML doesn't match that
+if Rails.version >= '5.0.0'
+  ActionController::TestRequest.prepend(Module.new do
+    def initialize(*)
+      super
+
+      @custom_param_parsers[:xml] =  lambda { |raw_post| Hash.from_xml(raw_post) }
+    end
+  end)
+end
+
 RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
