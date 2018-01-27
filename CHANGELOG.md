@@ -1,5 +1,7 @@
 ### Unreleased
 
+### 0.7.0 - 2018-01-27
+
 * enhancements
   * Add support for Rails 5.1
   * Add support for Ruby 2.5
