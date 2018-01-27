@@ -16,13 +16,14 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["spec/**/*"]
 
-  s.required_ruby_version = Gem::Requirement.new(">= 2.0.0")
+  s.required_ruby_version = Gem::Requirement.new(">= 2.2.0")
 
-  s.add_dependency "rails", ">= 3.2.9"
+  s.add_dependency "rails", ">= 5.0.0"
   s.add_dependency "soap2r", "~> 1.5.8"
   s.add_dependency "redis-namespace", "~> 1.0"
   s.add_dependency 'logger-application', '~> 0.0.2'
 
   s.add_development_dependency "sqlite3"
+  s.add_development_dependency 'rails-controller-testing'
   s.add_development_dependency 'rspec-rails', '~> 3.1'
 end

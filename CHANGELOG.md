@@ -1,5 +1,12 @@
 ### Unreleased
 
+* enhancements
+  * Add support for Rails 5.1
+
+* breaking change
+  * Drop support for Rails 3.2, 4.0, 4.1, and 4.2
+  * Drop support for Ruby 2.0 - 2.1
+
 ### 0.6.3 - 2018-01-20
 
 * enhancements

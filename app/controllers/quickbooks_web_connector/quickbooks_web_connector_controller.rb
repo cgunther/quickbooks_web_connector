@@ -1,5 +1,5 @@
 module QuickbooksWebConnector
   class QuickbooksWebConnectorController < QuickbooksWebConnector.config.parent_controller.constantize
-    skip_before_filter :verify_authenticity_token
+    skip_before_action :verify_authenticity_token
   end
 end
