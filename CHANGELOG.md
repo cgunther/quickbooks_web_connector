@@ -2,6 +2,7 @@
 
 * enhancements
   * Add support for Rails 5.1
+  * Add support for Ruby 2.5
 
 * breaking change
   * Drop support for Rails 3.2, 4.0, 4.1, and 4.2
