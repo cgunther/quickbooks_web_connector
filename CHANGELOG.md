@@ -2,6 +2,7 @@
 
 * bug fix
   * Catch when QuickBooks calls ReceiveResponseXML with an error message and fail job rather than trying to perform handler
+  * Replace non-ASCII characters in request XML data with decimal entities to fix QuickBooks being unable to parse such XML requests
 
 ### 0.7.0 - 2018-01-27
 

@@ -13,13 +13,23 @@ describe QuickbooksWebConnector::Job do
     end
   end
 
-  it 'becomes a failure if building the request XML raises an exception' do
-    allow(SomeBuilder).to receive(:perform).and_raise(Exception)
-    job = described_class.new 'request_builder_class' => 'SomeBuilder'
+  describe '#request_xml' do
+    it 'replaces non-ascii characters with their decimal entity' do
+      allow(SomeBuilder).to receive(:perform).and_return('Foo–Bar')
 
-    expect(job.request_xml).to eq(:failed)
+      job = described_class.new 'request_builder_class' => 'SomeBuilder'
 
-    expect(QuickbooksWebConnector::Failure.count).to be(1)
+      expect(job.request_xml).to eq('Foo&#8211;Bar')
+    end
+
+    it 'becomes a failure if building the request XML raises an exception' do
+      allow(SomeBuilder).to receive(:perform).and_raise(Exception)
+      job = described_class.new 'request_builder_class' => 'SomeBuilder'
+
+      expect(job.request_xml).to eq(:failed)
+
+      expect(QuickbooksWebConnector::Failure.count).to be(1)
+    end
   end
 
   it 'becomes a failure if handling the response raises an exception' do

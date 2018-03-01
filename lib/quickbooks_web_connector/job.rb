@@ -75,7 +75,14 @@ module QuickbooksWebConnector
     # Returns the request XML from the payload.
     def request_xml
       begin
-        request_builder_class.perform(*job_args)
+        xml = request_builder_class.perform(*job_args)
+
+        # Replace non-ascii characters with decimal entities
+        xml.gsub!(/[^\u{20}-\u{7E}]/) do |char|
+          "&##{char.codepoints.first};"
+        end
+
+        xml
       rescue Object => ex
         fail(ex)
         :failed
