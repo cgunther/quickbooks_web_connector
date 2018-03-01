@@ -1,5 +1,8 @@
 ### Unreleased
 
+* bug fix
+  * Catch when QuickBooks calls ReceiveResponseXML with an error message and fail job rather than trying to perform handler
+
 ### 0.7.0 - 2018-01-27
 
 * enhancements

@@ -101,8 +101,13 @@ module QuickbooksWebConnector
       #
       def receiveResponseXML(parameters)
         job = QuickbooksWebConnector::Job.reserve
-        job.response_xml = parameters.response
-        job.perform
+
+        if parameters.message.present?
+          job.fail(ReceiveResponseXMLError.new(parameters.message))
+        else
+          job.response_xml = parameters.response
+          job.perform
+        end
 
         progress = if QuickbooksWebConnector.size == 0
           # We're done
