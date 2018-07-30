@@ -110,6 +110,36 @@ $ rails server
 
 Now perform some actions in you application that will queue up some jobs, then run the Web Connector application to have QuickBooks process those jobs.
 
+Configuring QuickbooksWebConnector
+=================================
+
+```ruby
+QuickbooksWebConnector.configure do |c|
+  # Username, password, path to QBW file. Required at least once, can be
+  # repeated for multiple users.
+  c.user 'web_connector', 'top-secret-password', 'C:\path\to\company\file.QBW'
+
+  # user can accept an optional owner/file ID as UUIDs if you need to supply
+  # your own.
+  c.user 'web_connector', 'top-secret-password', 'C:\path\to\company\file.QBW', 'eeab2d61-e545-4b02-9fd7-8e3052f9fe35', '0f2eb812-8443-46fc-90ac-32ab81892fd2'
+
+  # Allows you to control which controller is inherited from.
+  # Defaults to ApplicationController
+  c.parent_controller = 'MyController'
+
+  # Appears in the Web Connector application so the user knows which web app
+  # they're connecting to.
+  c.app_name = 'Your app name'
+  c.app_description = 'Describe your app'
+
+  # Callback that gets run each time the web connector updates
+  c.after_authenticate do
+    # Enqueue some jobs to run everytime the web connector runs, for example:
+    QuickbooksWebConnector.enqueue QuerySalesTaxItemsBuilder, QuerySalesTaxItemsHandler
+  end
+end
+```
+
 Contributing
 ============
 
