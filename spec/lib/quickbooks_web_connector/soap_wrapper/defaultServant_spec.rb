@@ -49,11 +49,27 @@ describe QuickbooksWebConnector::SoapWrapper::QBWebConnectorSvcSoap do
       it 'returns "nvu" with an invalid user' do
         expect(response.authenticateResult[1]).to eq('nvu')
       end
+
+      it 'does not run the after authenticate callback' do
+        expect do |block|
+          QuickbooksWebConnector.config.after_authenticate(&block)
+
+          response
+        end.to_not yield_control
+      end
     end
 
     context 'authorized' do
       before do
         QuickbooksWebConnector.config.user 'foo', 'bar', '/path/to/company.qbw'
+      end
+
+      it 'runs the after authenticate callback' do
+        expect do |block|
+          QuickbooksWebConnector.config.after_authenticate(&block)
+
+          response
+        end.to yield_control
       end
 
       context 'has no data to send' do

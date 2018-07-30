@@ -49,6 +49,8 @@ module QuickbooksWebConnector
         user = QuickbooksWebConnector.config.users[parameters.strUserName]
 
         result = if user && user.valid_password?(parameters.strPassword)
+          QuickbooksWebConnector.config.run_after_authenticate
+
           if QuickbooksWebConnector.size > 0
             # Store how many jobs are queued so we can track progress later
             QuickbooksWebConnector.store_job_count_for_session

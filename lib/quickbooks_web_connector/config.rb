@@ -55,6 +55,14 @@ module QuickbooksWebConnector
 
       config.users[username] = User.new(username, *args)
     end
+
+    def after_authenticate(&block)
+      @after_authenticate = block
+    end
+
+    def run_after_authenticate
+      @after_authenticate.call if @after_authenticate
+    end
   end
 
   set_default_configuration
