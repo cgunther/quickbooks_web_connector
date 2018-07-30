@@ -1,5 +1,7 @@
 ### Unreleased
 
+### 0.8.0 - 2018-07-29
+
 * enhancements
   * Add `after_authenticate` config callback to run a custom block after the web connector authenticates
 
